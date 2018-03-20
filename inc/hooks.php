@@ -48,3 +48,23 @@ function schoolsUOL_header_bottom() {
 	do_action( 'schoolsUOL_header_bottom' );
 }
 
+/**
+ * Semantic <content> hooks
+ * Outside & inside main <content> element, top & bottom.
+ * 
+ */
+function schoolsUOL_content_before() {
+	do_action( 'schoolsUOL_content_before' );
+}
+
+function schoolsUOL_content_after() {
+	do_action( 'schoolsUOL_content_after' );
+}
+
+function schoolsUOL_content_top() {
+	do_action( 'schoolsUOL_content_top' );
+}
+
+function schoolsUOL_content_bottom() {
+	do_action( 'schoolsUOL_content_bottom' );
+}
