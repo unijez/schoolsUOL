@@ -2,14 +2,13 @@
    #Site Global Sizes
    ========================================================================== */
 
-$global-site-width: 1530px !default;
+$global-site-width: 1220px !default;
 
-$toast-gutter-width: 40px !default;
 $toast-breakpoint-medium: 740px !default;
 $toast-breakpoint-small: 320px !default;
 
-$desktop-side-pad: 30px;
-$mobile-side-pad: 20px;
+$desktop-side-pad: 40px;
+$mobile-side-pad: 30px;
 
 $nav-horizontal-gap: 	20px !default;
 $nav-vertical-gap: 		20px !default;
@@ -31,3 +30,4 @@ $site-header-padding: 25px;
 $site-footer-padding: 35px;
 
 
+$search-button: 50px;

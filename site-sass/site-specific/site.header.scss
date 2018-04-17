@@ -3,6 +3,116 @@
 --------------------------------------------------------------*/
 
 
+
+
+
+
+//
+// Search Banner
+//
+
+
+.header-search {
+	background-color: $uni-blue;
+}
+
+
+
+
+
+//
+// Site Banner
+//
+
+
+
+.site-header {
+	border-top: 5px solid $uni-blue;
+}
+
+
+
+
+
+
+//
+// Site Branding
+//
+
+
+
+
+
+.site-branding {
+   
+   margin-bottom: $mobile-side-pad;
+   
+   
+   @include mq(tablet) {
+   margin-bottom: 0;
+   	float: left;
+   
+   }
+   
+   	.site-title { 
+     @include font-family(helvetica);
+     @include font-weight(black);
+     @include font-size(16px);
+     text-transform: uppercase;
+     max-width: 250px;
+	 
+	 
+	 @include mq(tablet) {
+		  @include font-size(18px);
+	 }
+
+  }
+  
+
+  .site-title a {
+  	color: $uni-blue;
+  	text-decoration: none;
+  }
+  
+}
+
+
+
+.site-branding .site-title {
+		
+		margin-top: $mobile-side-pad;
+	
+	@include mq(tablet) {
+		 margin-top: 0;
+		 margin-left: $desktop-side-pad;
+	}
+	
+	
+	
+}
+
+
+
+.site-branding__hero-logo {
+	color: $uni-blue;
+	max-width: 300px;
+	display: block;
+	
+	@include mq(tablet) {
+		
+	max-width: 250px;
+	
+	}
+	
+	@include hocus() {
+		color: $uni-grey;
+	}
+	
+}
+
+
+
+
 	@include mq(desktop) {
 	
 	}

@@ -29,13 +29,34 @@
 <?php schoolsUOL_body_top(); ?>
 
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'schoolsUOL' ); ?></a>
-
-	<header id="masthead" class="site-header">
+	
+	<div class="header-search site-module hide">
+	
+		<div class="module-inner-wrap">
+		
+			<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<input type="search" placeholder="<?php _e( 'Type and press enter', 'schoolsUOL' ); ?>" name="s" id="s" />
+			</form>
+		
+		</div> <!--module-inner-wrap-->
+	
+	</div> <!--header-search-->
+	
+	
+	<header id="masthead" class="site-header site-module">
 		
 		<?php schoolsUOL_header_top(); ?>
 		
+		<div class="module-inner-wrap">
 		
-		<div class="site-branding">
+		
+		<div class="site-branding  flex-controlled">
+			
+			<a class="site-branding__hero-logo"  href="<?php echo esc_url('lincoln.ac.uk/home' ); ?>" rel="University Of Lincoln Logo" target="_blank" rel="noopener noreferrer">
+				<?php get_template_part( 'template-parts/site/uol-logo', 'landscape' ); ?>
+			</a>
+			
+			
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
@@ -44,7 +65,7 @@
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
 			endif;
 			$schoolsUOL_description = get_bloginfo( 'description', 'display' );
@@ -56,22 +77,63 @@
 
 		<nav id="site-navigation" class="main-navigation">
 			
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'schoolsUOL' ); ?></button>
+	
+			
+			<ul class="primary-menu clear">
 			
 			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'primary-menu',
-				'menu'            => '',
-				'container'       => '',
-				'container_class' => '',
-				'menu_class'      => 'primary-menu'
-			) );
+		
+				$nav_args = array( 
+					'container' 		=> '', 
+					'theme_location' => 'primary-menu',
+					'items_wrap' 		=> '%3$s'
+				);
+				
+				wp_nav_menu( $nav_args ); 
+				
 			?>
+		
+			<li class="search-toggle-menu"><button href="#" class="search-toggle main-btn" title="<?php _e( 'Show the search field', 'schoolsUOL' ); ?>"><i class="fas fa-search"></i></button></li>
+			
+			</ul>
 			
 		</nav><!-- #site-navigation -->
 		
 		
 		<?php schoolsUOL_header_bottom(); ?>
+		
+		
+		</div> <!--module-inner-wrap-->
+		
+		<ul class="mobile-header-control level-elements">
+			
+			<li class="search-toggle-menu-item"><button class="mobile-menu-button main-btn" aria-controls="primary-menu" aria-expanded="false"><i class="fal fa-align-left"></i></button></li>
+			<li class="search-toggle-menu"><button href="#" class="search-toggle main-btn" title="<?php _e( 'Show the search field', 'schoolsUOL' ); ?>"><i class="fas fa-search"></i></button></li>
+		
+		</ul>
+		
+		
+		<nav class="mobile-navigation hide">
+							
+			<ul class="primary-menu clear">
+					
+				<?php
+		
+					if ( has_nav_menu( 'primary-menu' ) ) {
+																			
+							wp_nav_menu( $nav_args ); 
+		
+					} else {
+						
+							wp_list_pages( $list_pages_args );
+							
+					} 
+						
+				?>
+												
+			</ul><!-- .main-menu -->
+				
+		</nav><!-- .mobile-navigation -->
 		
 		
 	</header><!-- #masthead -->

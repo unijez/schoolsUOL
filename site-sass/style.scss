@@ -65,12 +65,14 @@
 @import "base/alignments";
 @import "base/animations";
 @import "base/captions";
+@import "base/grid";
 @import "components/social";
 @import "components/buttons";
 @import "components/navigation";
-
-
+@import "components/forms";
+@import "components/widgets";
 
 @import "site-specific/site.post";
 @import "site-specific/site.page";
 @import "site-specific/site.header";
+@import "site-specific/site.footer";

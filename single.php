@@ -22,7 +22,7 @@
 
 							
 								<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
-							
+							<?php do_action( 'nice_likes_custom' ); ?>
 
 				                <?php if ( comments_open() || get_comments_number() ) : ?>
 
@@ -38,7 +38,10 @@
 
  					<?php endwhile; ?>
  						
-
+ 							
+ 						<?php get_template_part( 'template-parts/site/loop', 'nav' ); ?>		
+ 							
+ 							
 			<?php endif;  wp_reset_query(); ?>
 
 

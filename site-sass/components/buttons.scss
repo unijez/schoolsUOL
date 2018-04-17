@@ -8,8 +8,9 @@
   text-align: center;
   margin: 0; 
   cursor: pointer; 
-  padding: $mobile-side-pad;
-  border-radius: $global-border-radius;
+  padding: 0;
+  @include vendor(border-radius, $small-border-radius);
+  border: none;
   @include vendor(transition, $global-transition);
   
   	
@@ -26,3 +27,83 @@
 	height: 40px;
 	background: red;
 }
+
+
+/* Mobile Navigation Button
+   ===========================================================*/
+   
+   
+.site-header .mobile-menu-button {
+	
+	
+	@include mq(tablet){
+		display: none;
+	}
+	
+}
+
+.menu-active .mobile-menu-button{
+	display: none;
+}
+
+.back-top,
+.mobile-menu-button,
+.search-toggle {
+	
+	padding: 13px $mobile-side-pad;
+
+	@include mq(tablet){
+	padding: 13px 15px;
+	}
+	
+	
+}
+
+
+.block-button-empty {
+	padding: 0;
+	height: auto;
+	width: auto;
+	background-color: transparent;
+	@include flexbox;
+	@include align-items(center);
+	
+	@include hocus() {
+		background-color: inherit;
+	}
+}
+
+
+
+	
+	.icon-left{
+		padding-right: 10px;
+	}
+	
+	.icon-right{
+		padding-left: 10px;
+	}
+
+
+.block-button-icon {
+	@include inline-flex;
+	@include align-items(center);
+
+	
+}
+
+.block-button-icon svg {
+	@include font-size(25px);
+}
+
+
+.page-nav .block-button {
+	background-color: $off-white-footer;
+	padding: 10px 15px;
+}
+
+
+
+/*.mobile-menu-button{
+	padding-left: $mobile-side-pad;
+}*/

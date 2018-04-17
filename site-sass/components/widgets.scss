@@ -1,0 +1,40 @@
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+
+
+$widget-name: tribe-events-list-widget;
+$widget-sub-class: tribe-events-list-widget-events;
+$widget-sub-title: tribe-event-title;
+
+/*Widget Defaults.*/
+.widgets ul,
+.widgets li,
+.widgets ol,
+.widgets li{
+	
+	&:not(:last-child) {
+		margin-bottom: 10px;
+		padding: 0;
+	}
+}
+
+.widgets,
+.widget h2,
+.widget-title {
+	@include font-family(helvetica);
+	@include font-weight(black);
+	@include font-size(20px);
+	text-align: left;
+	margin-bottom: 20px;
+	color: $base-black;
+}
+
+.widgets li,
+.widgets p,
+.widgets a {
+	color: $base-black;
+	text-decoration: none;
+	@include font-size(15px);
+	@include font-weight(normal);
+}

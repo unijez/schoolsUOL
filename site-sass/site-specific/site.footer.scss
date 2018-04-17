@@ -1,3 +1,131 @@
 /*--------------------------------------------------------------
 # Site Footer
 --------------------------------------------------------------*/
+
+
+
+.site-footer__bottom,
+.site-footer__hero-logo {
+	color: $off-grey-footer;
+}
+
+.site-footer__bottom {
+	background-color: $off-white-footer;
+	@include font-family(helvetica);
+	@include font-weight(normal);
+	@include font-size(12px);
+	
+	@include mq(tablet) {
+		 @include font-size(15px);
+	}
+}
+
+
+
+
+//
+// Upper Footer
+//
+
+
+
+
+.footer-top {
+	background-color: $page-nav-grey;
+	border-top: 3px solid $off-white-footer;
+}
+
+
+.footer-top .social {
+	@extend .flex-controlled;
+	@extend .level-right;
+	@include align-items(flex-start);
+	
+}
+
+
+//
+// Footer Logo
+//
+
+
+
+
+
+
+.site-footer__hero-logo {
+	width: 110px;
+	margin-left: auto;
+}
+
+
+
+
+
+
+
+
+//
+// Footer Credits
+//
+
+
+
+.credits-inner {
+	/*margin-top: $mobile-side-pad;*/
+	/*@include flexbox;*/
+	@include align-items(flex-end);
+	
+	@include mq(tablet) {
+		 margin-top: 0;
+	}
+}
+
+.credits-inner p {
+	margin: 0;
+}
+
+.credits-inner .title {
+	color: $off-grey-footer-tint;
+}
+
+.credits-inner p:first-child {
+	
+	@include mq(tablet) {
+		line-height: 25px;
+	}
+}
+
+
+
+
+
+//
+// Mobile Styles
+//
+
+
+
+
+@include mq($until:tablet) {
+	
+	.credits-inner {
+		padding-right: 40px;
+	
+	}
+	
+	.credits-inner p:first-child {
+		margin-bottom: 8px;
+	}
+	
+	.site-footer__bottom {
+		
+		
+	}
+	
+	
+	.site-footer__hero-logo {
+		width: 80px;
+	}
+
+}

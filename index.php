@@ -18,32 +18,55 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main">
-	
-	
-	
-	
-	 			<?php if ( have_posts() ) : ?>
-	
-	 				<?php while ( have_posts() ) : the_post(); ?>
-	
-								
-									<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
-							
-	
-	 					<?php endwhile; ?>
-	 						
-	 						<?php the_posts_navigation(); ?>
-	 					
-	 					<?php else:  ?>
-	 					
-	 					<?php get_template_part( 'template-parts/content', 'none' ); ?>
-	 					
-	
-				<?php endif;  wp_reset_query(); ?>
-	
-	
-	</main><!-- #main -->
+<section class="body-section blog-body site-module">
 
+
+	<div class="module-inner-wrap">
+		
+		 			<?php if ( have_posts() ) : ?>
+		 				
+		 				<div class="posts-wrapper columns-wrap">
+		 				
+		 				
+		 				<?php while ( have_posts() ) : the_post(); ?>
+		 					
+		 					<div class="post-article-container column-spacings column column--1-of-3  column--small-1-of-2">
+		 					
+		 				
+		 						<article id="post-article-<?php the_ID(); ?>" <?php post_class(); ?>>
+		 						
+									
+										<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+		 							
+		 						</article>
+		 					
+		 					
+		 					</div> <!--post-article-container-->
+		 					
+		 				<?php endwhile; ?>
+		 				
+		 				</div> <!--posts-wrapper-->
+		
+		 					
+		 				<?php else:  ?>
+		 					
+		 						<?php get_template_part( 'template-parts/content', 'none' ); ?>
+		 					
+		
+					<?php endif;  wp_reset_query(); ?>
+						
+						
+		 	
+		 	
+		 				</div> <!--posts-wrapper-->
+			
+	
+			
+	</div> <!--module-inner-wrap-->
+	
+		<?php get_template_part( 'template-parts/site/loop', 'nav' ); ?>
+	
+	
+</section>
 
 <?php get_footer(); ?>

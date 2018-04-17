@@ -27,3 +27,12 @@
 	vertical-align: middle;
 	position: relative;
 }
+
+
+.widgets .social {
+	padding-top: 40px;
+}
+
+.widgets .social a{
+	@include font-size(30px);
+}

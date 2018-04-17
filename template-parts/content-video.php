@@ -11,6 +11,10 @@
  * @version 1.0
  */
 
+//Vars
+$post_video = get_field('post_video');
+
+
 ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?> 
@@ -28,22 +32,14 @@
 			the_title( '<h2 class="post-title post-spacing"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 			?>
-		
-		
-		<?php if ( has_post_thumbnail() ) : ?>
-		
-			<div class="post-entry-image">
-			
-				<?php lazy_featured_image('post-thumbnail'); ?>
-			
-						
-			</div><!-- .featured-media -->
-				
-		<?php endif; ?>
-		
-		
-	<div class="post-entry-excerpt post-spacing post-copy">
+
+	<?php if( $post_video ): ?>
 	
-		<?php the_excerpt( 100 ); ?>
-	
-	</div><!-- .post-entry-excerpt -->
+		<div class="post-entry-video">
+		
+			<?php echo $post_video; ?>
+		
+					
+		</div><!-- .featured-media -->
+			
+	<?php endif; ?>

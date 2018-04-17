@@ -2,18 +2,166 @@
 ## Posts and pages
 --------------------------------------------------------------*/
 
-.sticky {
-    display: block;
+
+
+//
+// Posts Strucutre
+//
+
+
+
+
+.blog-body,
+.post-entry-meta {
+	background-color: $off-white-footer;
 }
 
-.hentry {
-    /*margin: 0 0 3em;*/
+
+
+
+
+.post-spacing {
+	padding: $desktop-side-pad / 3 $desktop-side-pad / 2;
 }
+
+
+
+
+
+
+//
+// Post Blocks
+//
+
+
+
+
+@mixin inline-row {
+	@include flexbox;
+	@include align-items(center);
+	@include flex-direction(row);
+	
+}
+
+
+
+.hentry,.post {
+	@include vendor(border-radius, $small-border-radius);
+ 	@include vendor(box-shadow, 0 0 5px rgba(0, 0, 0, 0.2) );	
+ 	background-color: white;
+}
+
+
+
+
+
+//
+// Post Date, Likes Etc
+//
+
+
+
+
+
+.post-entry-meta {
+	@include font-family(verdana);
+	color: $post-meta;
+	@include font-weight(black);
+	@include font-size(12px);
+}
+
+
+.post-entry-meta li,
+.post-entry-meta svg,
+.post-entry-meta i,
+.post-entry-meta .nice-likes {
+	margin-right: 10px;
+	@include inline-row;
+	margin-bottom: 0;
+}
+
+
+.post-entry-meta i {
+	@include font-size(20px);
+	
+}
+
+.post-entry-meta a{
+	color: $post-meta;
+	text-decoration: none;
+	margin: 0;
+	
+	@include hocus() {
+		  text-decoration: none;
+		  color: $base-black;
+	}
+	
+}
+
+.post-entry-meta ul {
+	@include justify-content(flex-start);
+}
+
+.post-entry-meta ul li.likes {
+	margin-left: auto;
+}
+
+
+
+
+
+
+
+//
+// Post Title, Body Copy
+//
+
+
+
+
+
+
+
+
+.post-entry-excerpt.post-spacing, 
+.post-title.post-spacing {
+	padding-top: $mobile-side-pad;
+	padding-bottom: $mobile-side-pad;
+}
+
+.post-title {
+	@include font-family(helvetica);
+	color: $base-black;
+	@include font-weight(black);
+	@include font-size(25px);
+}
+
+
+.post-title a {
+	color: $base-black;
+	 text-decoration: none;
+	 
+	@include hocus() {
+		  text-decoration: underline;
+		  color: $base-black;
+	}
+	
+}
+
+
+
+.post-entry-video iframe,
+.format-image .post-entry-image img{
+	@include vendor(border-radius, 0 0 $small-border-radius $small-border-radius);
+}
+
+
+
 
 .byline, .updated:not(.published) {
     display: none;
 }
-
+/*
 .single .byline, .group-blog .byline {
     display: inline;
 }
@@ -21,8 +169,56 @@
 .page-links {
     clear: both;
     margin: 0 0 1.5em;
+}*/
+
+
+
+
+
+.post-copy p{
+	@include font-family(verdana);
+	color: $post-meta;
+	@include font-size(17px);
+	line-height: 27px;
 }
 
+
+
+
+
+
+
+
+//
+// Post Blocks
+//
+
+
+
+
+.page-nav {
+	background-color: $page-nav-grey;
+	@include font-family(helvetica);
+	color: $post-meta;
+	@include font-weight(black);
+	@include font-size(15px);
+	color: $base-black;
+}
+
+.page-nav a {
+	color: $base-black;
+	text-decoration: none;
+}
+
+.page-nav__single-next {
+	@include justify-content(flex-start);
+	
+}
+
+
+.page-nav__single-prev {
+	@include justify-content(flex-end);
+}
 
 
 /*--------------------------------------------------------------

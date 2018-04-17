@@ -13,7 +13,7 @@
 
 <?php if ( have_rows( 'social_media_repeater', 'option' ) ) : ?>
 
-	<ul class="social">
+	<ul class="social clear">
 
 		<?php while ( have_rows( 'social_media_repeater', 'option' ) ) : the_row(); ?>
 		
@@ -28,11 +28,11 @@
 
 		<?php if (strpos($select_value, 'envelope') !== false) : ?>
 			
-			<a href="mailto:<?php echo($socialurl) ?>"  target="_blank test">
+			<a href="mailto:<?php echo($socialurl) ?>" target="_blank" rel="noopener noreferrer">
 		
 		<?php else :  ?>
 		
-			<a href="<?php echo($socialurl) ?>" target="_blank">
+			<a href="<?php echo($socialurl) ?>" target="_blank" rel="noopener noreferrer">
 							
 		<?php endif; ?>
 	

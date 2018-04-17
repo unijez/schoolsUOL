@@ -125,11 +125,6 @@ ul,li {
 	padding: 0;
 }
 
-// First level lists.
-ul,
-ol {
-    margin-bottom : 1.5rem;
-}
 
 // Nested lists.
 li > ul,
@@ -619,4 +614,5 @@ textarea,
 
 h1, h2, h3, h4, h5, h6,p {
 	margin-top: 0;
+	margin-bottom: 0;
 }

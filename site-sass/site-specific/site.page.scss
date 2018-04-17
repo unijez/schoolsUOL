@@ -3,6 +3,30 @@
 --------------------------------------------------------------*/
 
 
+h1,h2,h3,h4,h5 {
+	margin: 0;
+}
+
+
+p:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.site-module {
+	
+	padding: $desktop-side-pad $mobile-side-pad;
+	
+	@include mq(tablet) {
+		padding: $desktop-side-pad ;
+	}
+
+}
+
+
+.columns-wrap {
+	margin-left: -$desktop-side-pad / 2;
+	margin-right: -$desktop-side-pad / 2;
+}
 
 	@include mq(desktop) {
 	
@@ -15,3 +39,14 @@
 	@include mq(extraWide) {
 		
 	}
+	
+	
+	
+.has-text-centered,
+.wp-caption-text {
+    text-align: center;
+	@include inline-flex;
+	@include align-items(center);
+	@include justify-content(center);
+	
+}

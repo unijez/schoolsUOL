@@ -12,7 +12,7 @@
  */
 
 ?>
-
+		
 		<?php if ( 'post' === get_post_type() ) : ?> 
 		
 		<div class="post-entry-meta post-spacing">
@@ -27,9 +27,8 @@
 		else :
 			the_title( '<h2 class="post-title post-spacing"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-			?>
-		
-		
+ 		?>
+ 	
 		<?php if ( has_post_thumbnail() ) : ?>
 		
 			<div class="post-entry-image">
@@ -40,10 +39,3 @@
 			</div><!-- .featured-media -->
 				
 		<?php endif; ?>
-		
-		
-	<div class="post-entry-excerpt post-spacing post-copy">
-	
-		<?php the_excerpt( 100 ); ?>
-	
-	</div><!-- .post-entry-excerpt -->
