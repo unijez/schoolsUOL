@@ -50,7 +50,7 @@
 		  					
 		  				</div>
 		  				
-		  			<?php endif; ?><!-- .footer-a -->
+		  			<?php endif; ?><!-- .footer-left -->
 		  				
 		  			<?php if ( is_active_sidebar( 'footer-middle' ) ) : ?>
 		  			
@@ -64,22 +64,23 @@
 		  					
 		  				</div>
 		  				
-		  			<?php endif; ?><!-- .footer-b -->
+		  			<?php endif; ?><!-- .footer-middle -->
 		  								
 		  			
-		  				
-		  			<?php if( function_exists('acf_add_local_field_group') )	:?>
+		  			<?php if ( is_active_sidebar( 'footer-right' ) ) : ?>	
 		  				
 		  				<div class="column-spacings column column--1-of-3  column--small-1-of-2">
 		  					
 		  					<div class="widgets">
-		  					
+		  						
+		  						<?php dynamic_sidebar( 'footer-right' ); ?>
+		  						
 			  					<!--Display Social Media List-->
 			  					<?php get_template_part( 'template-parts/site/social-media', 'icons' ); ?>
 		  					
 		  					</div><!-- .widgets -->
 		  					
-		  				</div>	 <!--column-->
+		  				</div>	 <!-- .footer-right -->
 		  				
 		  			<?php endif; ?>
 		  			
@@ -96,7 +97,6 @@
   <div class="footer-top">
 
 
-  	
 
   </div>  <!-- footer-top -->
 
@@ -111,6 +111,8 @@
 				  	
 				  		<p class="title">	<?php bloginfo( 'name' ); ?></p>
 					  	
+				  		<?php university_links(); ?>
+				  		
 					    <p class="copy">	&#169; University of Lincoln. All rights reserved</p>
 				  	
 				  	</div> <!--credits-inner-->

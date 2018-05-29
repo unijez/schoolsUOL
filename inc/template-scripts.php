@@ -24,6 +24,7 @@ function schoolsUOL_scripts() {
 //	//https://github.com/aFarkas/lazysizes
 	wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/js/lazysizes.min.js', '4.0.2', null,  true );
 		
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', '1.8.1', '', false );
 	
 	wp_enqueue_script( 'fontawesome', get_template_directory_uri() . '/js/fontawesome-all.min.js', '5.0.1', null,  true );
 	

@@ -2,6 +2,9 @@
 ## Widgets
 --------------------------------------------------------------*/
 
+@import "../fontawesome/fontawesome.scss";
+@import "../fontawesome/fa-solid";
+@import "../fontawesome/fa-brands";
 
 $widget-name: tribe-events-list-widget;
 $widget-sub-class: tribe-events-list-widget-events;
@@ -19,6 +22,7 @@ $widget-sub-title: tribe-event-title;
 	}
 }
 
+.widget,
 .widgets,
 .widget h2,
 .widget-title {
@@ -37,4 +41,58 @@ $widget-sub-title: tribe-event-title;
 	text-decoration: none;
 	@include font-size(15px);
 	@include font-weight(normal);
+}
+
+
+
+.widget:not(:last-child) {
+	padding-bottom: $widget-spacing;
+}
+
+
+
+//
+// Widget Categories
+//
+
+
+
+
+.widget_categories li {
+  @include fa-icon;
+  @extend .fas;
+	vertical-align: middle;
+	
+  &:before {
+    content: fa-content($fa-var-archive);
+	margin-right: 10px;
+  }
+}
+
+
+
+
+.widget_archive li {
+  @include fa-icon;
+  @extend .fas;
+	vertical-align: middle;
+	
+  &:before {
+    content: fa-content($fa-var-folder);
+	margin-right: 10px;
+	
+  }
+}
+
+
+.widget li a{
+@include font-family(helvetica);
+@include font-weight(normal);
+}
+
+
+
+.widget li:before {
+top: -2px;
+position: relative;
 }

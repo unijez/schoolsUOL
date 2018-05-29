@@ -52,14 +52,9 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
-			<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
-			) );
-			?>
-		</ol><!-- .comment-list -->
+		<ol class="commentlist">
+		    <?php wp_list_comments( array( 'type' => 'comment', 'callback' => 'schoolsUOL_comment' ) ); ?>
+		</ol>
 
 		<?php
 		the_comments_navigation();

@@ -74,6 +74,69 @@ jQuery(document).ready(function($) {
 		});
 	
 	
+//	$('.slick-slider').each(function (idx, item) {
+//	   var carouselId = "carousel" + idx;
+//	   this.id = carouselId;
+//	   $(this).slick({
+//	       arrows: true,
+//	       infinite: true,
+//	       speed: 300,
+//	       slidesToShow: 1,
+//	       slidesToScroll: 1,
+//	       dots: false,
+//	       autoplay: true,
+//	       autoplaySpeed: 10000,
+//	       speed: 1000,
+//		   appendArrows: "#" + carouselId + " .prev_next",
+//		          prevArrow: '<button>Previous</button>',
+//		          nextArrow: '<button>Next</button>'
+//	   });
+//	});
+//	
+$('.slick-slider').each(function (idx, item) {
+    var carouselId = "carousel-" + idx;
+    this.id = carouselId;
+    $(this).slick({
+		arrows: true,
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: false,
+		autoplay: true,
+		autoplaySpeed: 20000,
+		speed: 1000,
+		 prevArrow: '<button class="slick-prev slick-arrow main-btn"></button>',
+		 nextArrow: '<button class="slick-next slick-arrow main-btn"></button>',
+		 responsive: [
+		     {
+		       breakpoint: 980,
+		       settings: {
+		         slidesToShow: 1,
+		         slidesToScroll: 1
+		       }
+		     },
+		     {
+		       breakpoint: 740,
+		       settings: {
+		         slidesToShow: 1,
+		         slidesToScroll: 1
+		       }
+		     },
+		     {
+		       breakpoint: 320,
+		       settings: {
+		         slidesToShow: 1,
+		         slidesToScroll: 1
+		       }
+		     }
+		     // You can unslick at a given breakpoint now by adding:
+		     // settings: "unslick"
+		     // instead of a settings object
+		   ]
+    });
+});
+
+
 	
 	// Smooth scroll to header
 //	$('.back-top').click(function(){

@@ -1,0 +1,224 @@
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+
+.comments-area {
+	padding: $post-spacing *2;
+	background-color: $off-white-footer;
+	border-top: 2px solid white;
+	
+	@include mq(tablet) {
+		padding: $desktop-side-pad;
+	}
+	
+}
+
+
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+
+
+.comment-reply-title {
+	@include font-size(30px);
+	@include font-weight(bold);
+	margin-bottom: 15px;
+}
+
+.g-recaptcha {
+	text-align: center;
+	
+	> div {
+		display: inline-block;
+	}
+}
+
+
+
+.comment-form label{
+		@include font-family(helvetica);
+		@include font-weight(black);
+		@include font-size(15px);
+		line-height: 33px;
+		text-transform: uppercase;
+}	
+
+
+
+.comment-form .subscribe-label {
+	@include font-size(14px);
+}
+
+
+.contact-form,
+.comment-form{
+
+		
+		
+		
+		input[type="text"],
+		input[type="tel"],
+		input[type="email"],
+		input[type="url"],
+		textarea,
+		input[type="submit"],
+		input[type="button"]{
+			min-height: 50px;
+			padding: 20px 30px;
+			color: $category-text;
+			@include font-size(14px);
+			width: 100%;
+			@include menu-animation;
+			/*@include font-weight(bold);*/
+			@include font-family(helvetica);
+			@include font-weight(black);
+		}
+		
+		textarea,
+		input[type="tel"],
+		input[type="text"],
+		input[type="email"],
+		input[type="url"],{
+			padding-left: 20px;
+			padding-right: 20px;
+			background-color: $off-white-one;
+			border: 2px solid $uni-grey;
+			outline-color: $uni-grey;
+			
+			@include hocus() {
+			outline-color: $uni-teal;
+			border: 2px solid $uni-teal;
+			}
+			
+		}
+		
+		
+		
+		input[type="submit"],
+		input[type="button"]{
+				
+			 @extend .read-more;	
+			 @extend .main-btn;
+			 background-color: white;
+			@include mq(tablet) {
+				max-width: 50%;
+				
+			}
+			
+			
+		}
+		
+		
+		.form-submit {
+			text-align: center;
+		}
+		
+		
+		.comment-form-author,
+		.comment-form-email {
+			
+			margin-bottom: 25px;
+			
+			@include mq(tablet) {
+				width: 47.5%;
+				float: left;
+				margin-top: 0;
+			}
+		}
+		
+		.comment-form-email {
+			
+			@include mq(tablet) {
+				
+			margin-left: 33px;
+			
+			}
+			
+			
+		}
+		
+
+}
+
+
+//
+// Comment Replies
+//
+
+.commentlist {
+	padding-left: 0;
+	list-style: none;
+}
+
+
+.avatar {
+	 @include vendor(border-radius, 50%);
+	 width: 40px;
+	 position: relative;
+	 margin-bottom: 15px;
+	 left: -10px;
+}
+
+.comment-inner { 
+	padding: 25px;
+	background: $page-nav-grey;
+	position: relative;
+}
+
+.comment-inner:before {
+	content: "";
+	display: block;
+	
+	border: 10px solid transparent;
+	border-bottom-color: $page-nav-grey;
+	position: absolute;
+	top: -20px;
+	left: 0;
+}
+
+.comment-header {
+	margin-bottom: 5px;
+}
+
+.comment-actions {
+	margin-bottom: 20px;
+}
+
+
+.comment-header,
+.comment-author{
+	@include font-family(helvetica);
+	color: $post-meta;
+	@include font-weight(black);
+	@include font-size(18px);
+	color: $base-black;
+	text-transform: uppercase;
+}
+
+
+.comment-actions p.comment-date {
+	margin-bottom: 0;
+}
+
+.comment-actions p a {
+	@include font-family(helvetica);
+	color: $post-meta;
+	@include font-weight(normal);
+	@include font-size(15px);
+	text-decoration: none;
+}
+
+
+.comment-form p:not(.comment-subscription-form) {
+	margin-bottom: 30px;
+}
+
+
+.comment-content {
+	color: $off-grey-footer-tint;
+}

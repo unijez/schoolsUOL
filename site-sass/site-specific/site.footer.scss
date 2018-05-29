@@ -38,8 +38,9 @@
 
 .footer-top .social {
 	@extend .flex-controlled;
-	@extend .level-right;
+	/*@extend .level-right;*/
 	@include align-items(flex-start);
+	list-style: none;
 	
 }
 
@@ -50,17 +51,10 @@
 
 
 
-
-
-
 .site-footer__hero-logo {
 	width: 110px;
 	margin-left: auto;
 }
-
-
-
-
 
 
 
@@ -74,7 +68,7 @@
 .credits-inner {
 	/*margin-top: $mobile-side-pad;*/
 	/*@include flexbox;*/
-	@include align-items(flex-end);
+	@include align-items(flex-start);
 	
 	@include mq(tablet) {
 		 margin-top: 0;
@@ -97,8 +91,31 @@
 }
 
 
+.university-links {
+	margin-bottom: 7px;
+	list-style: none;
+	margin-top: 10px;
+}
 
 
+.university-links li {
+	display: inline-block;
+}
+
+.university-links li a{
+	color: $off-grey-footer-tint;
+	text-decoration: none;
+	
+	@include hocus() {
+		  text-decoration: underline;
+	}
+	
+}
+
+.university-links li:not(:last-child):after {
+	content: "|";
+	margin: 0 5px;
+}
 
 //
 // Mobile Styles
@@ -107,7 +124,17 @@
 
 
 
+
 @include mq($until:tablet) {
+	
+	
+	.footer-top.site-module,
+	.page-nav.site-module {
+		padding-left: $post-spacing *2 ;
+		padding-right: $post-spacing *2 ;
+	}
+	
+	
 	
 	.credits-inner {
 		padding-right: 40px;

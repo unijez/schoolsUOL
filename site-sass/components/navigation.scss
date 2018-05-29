@@ -55,6 +55,7 @@
 	
 	.mobile-header-control,
 	.mobile-header-control .search-toggle-menu {
+		list-style: none;
 		@include mq(tablet) {
 		display: none;
 		}

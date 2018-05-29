@@ -50,5 +50,7 @@
 				get_search_form();
 
 		endif; ?>
+		
+		
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

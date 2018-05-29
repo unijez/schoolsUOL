@@ -72,7 +72,7 @@ $toast-pulls: true !default;
   
 	
 	@include mq($until:tablet) {
-		width: auto;
+		width: 100%;
 	}
 	
  @include mq($from: desktop, $until: wide) {
@@ -242,17 +242,34 @@ $toast-pulls: true !default;
 	
 }
 
+.level-elements,
+.level-left,
+.level-right {
+	@include flexbox;
+}
 
+.level-left {
+  @include align-items(flex-start);
+  @include justify-content(flex-start);
+  
+}
+
+.level-right {
+	@include align-items(flex-end);
+	@include justify-content(flex-end);
+	 margin-left: auto;
+          
+}
 
 
 @include mq(tablet) {
 	
 	
-	.level-elements,
+	/*.level-elements,
 	.level-left,
 	.level-right {
 		@include flexbox;
-	}
+	}*/
 	
 	.level-left {
 	  @include align-items(flex-start);

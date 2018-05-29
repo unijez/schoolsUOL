@@ -9,7 +9,7 @@ h1,h2,h3,h4,h5 {
 
 
 p:not(:last-child) {
-	margin-bottom: 20px;
+	margin-bottom: $paragraph-spacing;
 }
 
 .site-module {
@@ -20,6 +20,13 @@ p:not(:last-child) {
 		padding: $desktop-side-pad ;
 	}
 
+}
+
+.site-header.site-module {
+	
+	@include mq($until:tablet) {
+		padding-bottom: 0;
+	}
 }
 
 

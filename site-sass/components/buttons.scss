@@ -1,6 +1,17 @@
 /*--------------------------------------------------------------
 # Button Control
 --------------------------------------------------------------*/
+
+
+@mixin button-padding {
+	padding: 12px 20px;
+	
+	@include mq(tablet){
+		padding: 10px 15px;
+	}
+}
+
+
 .main-btn {
   display: inline-block;
   vertical-align: middle; 
@@ -59,6 +70,10 @@
 	
 }
 
+.block-button {
+	@include button-padding;
+}
+
 
 .block-button-empty {
 	padding: 0;
@@ -75,7 +90,6 @@
 
 
 
-	
 	.icon-left{
 		padding-right: 10px;
 	}
@@ -83,6 +97,8 @@
 	.icon-right{
 		padding-left: 10px;
 	}
+
+
 
 
 .block-button-icon {
@@ -97,9 +113,63 @@
 }
 
 
+
+
+
+//
+// Page Navitaion
+//
+
+
 .page-nav .block-button {
 	background-color: $off-white-footer;
-	padding: 10px 15px;
+	@include button-padding;
+	
+	@include hocus() {
+		background-color: $post-meta;
+		color: $off-white-footer;
+	}
+}
+
+.page-nav .block-button:hover a {
+	
+	color: $off-white-footer;
+}
+
+
+
+//
+// Read More Link
+//
+
+.home-hero-banner__detail .read-more,
+.read-more {
+	@include font-family(verdana);
+	@include font-size(12px);
+	text-decoration: none;
+	background-color: $off-white-footer;
+	@include font-weight(black);
+	color: $post-meta;
+	
+	@include hocus() {
+		background-color: $post-meta;
+		color: $off-white-footer;
+	}
+	
+	
+	@include mq(desktop){
+		@include font-size(14px);
+	}
+	
+}
+
+.home-hero-banner__detail .read-more {
+	margin: $mobile-side-pad 0 0 ;
+}
+
+.home-hero-banner__detail .read-more svg{
+	margin-left: 15px;
+	margin-right: 0;
 }
 
 

@@ -16,54 +16,122 @@ if ( ! function_exists( 'schoolsUOL_post_meta' ) ) {
 	
 	function schoolsUOL_post_meta() { ?>
 		
-		<?php 
 		
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
-
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date( 'M jS, Y' ) ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
-		);
-
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( '%s', 'post date', 'schoolsUOL' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		<?php if( get_theme_mod('schools_theme_choice') == 'visual-layout'  && is_front_page() ): ?>
 		
-		
-		
-		
-		
-		?>
-
-		<ul class="flex-controlled">
-		
-			<li><i class="fas fa-calendar-alt fa-2x"></i><?php echo($posted_on) ?></li>
-		
-			<?php if ( function_exists( 'nice_likes' ) ) {
-				echo('<li class="likes">');
-					 nice_likes( array( 'echo' => true ) );
-				echo('</li>');
-			
-			} ?>
-		
-		
-			<?php if ( comments_open() ) {
 				
-				echo('<li>');
-				echo('<i class="fas fa-comments fa-2x"></i>');
-			
-				comments_popup_link( '0', '1', '%', 'post-comments' );
+					<?php 
+						
+						$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+						if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+							$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+						}
 				
-				echo('</li>');
-			} ?>
-		</ul>
+						$time_string = sprintf( $time_string,
+							esc_attr( get_the_date( 'c' ) ),
+							esc_html( get_the_date( 'F jS, Y' ) ),
+							esc_attr( get_the_modified_date( 'c' ) ),
+							esc_html( get_the_modified_date() )
+						);
+				
+						$posted_on = sprintf(
+							/* translators: %s: post date. */
+							esc_html_x( '%s', 'post date', 'schoolsUOL' ),
+							'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+						);
+						
+						
+						
+						
+						
+						?>
+						
+						
+						
+								
+						<div class="date"><i class="fas fa-calendar-alt fa-2x"></i><?php echo($posted_on) ?></div>
+						
+						<ul class="flex-controlled">		
+									<?php if ( function_exists( 'nice_likes' ) ) {
+										echo('<li class="likes">');
+											 nice_likes( array( 'echo' => true ) );
+										echo('</li>');
+									
+									} ?>
+								
+								
+									<?php if ( comments_open() ) {
+										
+										echo('<li class="comments">');
+										echo('<i class="fas fa-comments fa-2x"></i>');
+									
+										comments_popup_link( '0', '1', '%', 'post-comments' );
+										
+										echo('</li>');
+									} ?>
+						</ul>
+						
+						
+				
+		
+		
+		<?php else : ?>
+	
+		
+		
+				<?php 
+				
+				$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+				if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+					$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+				}
+		
+				$time_string = sprintf( $time_string,
+					esc_attr( get_the_date( 'c' ) ),
+					esc_html( get_the_date( 'F jS, Y' ) ),
+					esc_attr( get_the_modified_date( 'c' ) ),
+					esc_html( get_the_modified_date() )
+				);
+		
+				$posted_on = sprintf(
+					/* translators: %s: post date. */
+					esc_html_x( '%s', 'post date', 'schoolsUOL' ),
+					'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+				);
+				
+				
+				
+				
+				
+				?>
+		
+				<ul class="flex-controlled">
+				
+					<li class="date"><i class="fas fa-calendar-alt fa-2x"></i><?php echo($posted_on) ?></li>
+				
+					<?php if ( function_exists( 'nice_likes' ) ) {
+						echo('<li class="likes">');
+							 nice_likes( array( 'echo' => true ) );
+						echo('</li>');
+					
+					} ?>
+				
+				
+					<?php if ( comments_open() ) {
+						
+						echo('<li class="comments">');
+						echo('<i class="fas fa-comments fa-2x"></i>');
+					
+						comments_popup_link( '0', '1', '%', 'post-comments' );
+						
+						echo('</li>');
+					} ?>
+				</ul>
+		
+		
+		
+		<?php endif; ?>
+		
 		
 	<?php
 	}
@@ -130,3 +198,76 @@ if ( ! function_exists( 'schoolsUOL_entry_footer' ) ) :
 		);
 	}
 endif;
+
+
+
+
+/**
+ * Post Permalink Button
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+
+
+
+if ( ! function_exists( 'schoolsUOL_permalink_button' ) ) {
+
+	
+	function schoolsUOL_permalink_button() { ?>
+			
+			<?php if( get_theme_mod('schools_theme_choice') == 'visual-layout'  && is_front_page() ): ?>
+			
+				
+				<a class="read-more main-btn block-button button-spacing" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Read More</a>
+				
+				
+			<?php else : ?>
+			
+				<a class="read-more main-btn block-button-icon with-icon button-spacing" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Read More<span class=""><i class="fas fa-long-arrow-right fa-fw fa-2x"></i></span></a>
+			
+			<?php endif; ?>
+			
+	<?php
+	}
+
+}
+	
+	
+	
+	
+	
+
+/**
+ * University Footer Credits
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+ 
+ 
+ function university_links() {
+ 
+ 	$sccessibility = esc_url('lincoln.ac.uk/home/abouttheuniversity/accessibility/' );
+ 	$contacting = esc_url('lincoln.ac.uk/home/contactus/' );
+ 	$legal = esc_url('lincoln.ac.uk/home/abouttheuniversity/governance/universitypolicies/' );
+ 	$privacy = esc_url('lincoln.ac.uk/home/abouttheuniversity/governance/universitypolicies/websiteandpublicationsinformationliability/' );
+ 	$disclaimer = esc_url('lincoln.ac.uk/home/abouttheuniversity/governance/universitypolicies/websiteandpublicationsinformationliability/' );
+ 	$freedom = esc_url('secretariat.blogs.lincoln.ac.uk/information-compliance/freedom-of-information/' );
+ 	
+	echo('<ul class="university-links">');
+ 	
+	 	echo('<li><a href="' . $sccessibility. '" rel="Accessibility">' . 'Accessibility'. '</a></li>');
+	 	echo('<li><a href="' . $contacting. '" rel="Contacting the University">' . 'Contacting the University'. '</a></li>');
+	 	echo('<li><a href="' . $legal. '" rel="Legal">' . 'Legal'. '</a></li>');
+	 	echo('<li><a href="' . $privacy. '" rel="Privacy">' . 'Privacy'. '</a></li>');
+	 	echo('<li><a href="' . $disclaimer. '" rel="Disclaimer">' . 'Disclaimer'. '</a></li>');
+	 	echo('<li><a href="' . $freedom. '" rel="Freedom of Information">' . 'Freedom of Information'. '</a></li>');
+ 	
+	echo('</ul>');
+	
+ };
+ 
+	

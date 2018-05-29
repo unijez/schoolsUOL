@@ -40,8 +40,12 @@ if ( ! function_exists( 'schoolsUOL_setup' ) ) :
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
+		// Post thumbnails
 		add_theme_support( 'post-thumbnails' );
-
+		add_image_size( 'post-thumbnail', 600, 9999 );
+		add_image_size( 'post-gallery-thumbnail', 480, 250, array( 'top', 'left')  );
+		add_image_size( 'post-hero-banner', 1220, 420, array( 'top', 'left')  );
+		add_image_size( 'post-hero-banner-inner', 1220, 570, array( 'top', 'left')  );
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary-menu' => esc_html__( 'Primary', 'schoolsUOL' ),
@@ -109,36 +113,40 @@ add_action( 'after_setup_theme', 'schoolsUOL_content_width', 0 );
  */
 function schoolsUOL_widgets_init() {
 
-			register_sidebar( array(
-				'name'          => esc_html__( 'Sidebar', 'schoolsUOL' ),
-				'id'            => 'sidebar-1',
-				'description'   => esc_html__( 'Add widgets here.', 'schoolsUOL' ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</section>',
-				'before_title'  => '<h2 class="widget-title">',
-				'after_title'   => '</h2>',
-			) );
+			
 	
 	
 			register_sidebar( array(
 				'name' 			=> __( 'Footer Left', 'schoolsUOL' ),
 				'id' 			=> 'footer-left',
-				'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'radcliffe' ),
+				'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'schoolsUOL' ),
 				'before_title' 	=> '<h3 class="widget-title">',
 				'after_title' 	=> '</h3>',
 				'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-				'after_widget' 	=> '</div><div class="clear"></div></div>'
+				'after_widget' 	=> '</div></div>'
 			) );
 	
 			register_sidebar( array(
 				'name' 			=> __( 'Footer Middle', 'schoolsUOL' ),
 				'id' 			=> 'footer-middle',
-				'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'radcliffe' ),
+				'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'schoolsUOL' ),
 				'before_title' 	=> '<h3 class="widget-title">',
 				'after_title' 	=> '</h3>',
 				'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-				'after_widget' 	=> '</div><div class="clear"></div></div>'
+				'after_widget' 	=> '</div></div>'
 			) );
+			
+			
+			register_sidebar( array(
+						'name' 			=> __( 'Footer Right', 'schoolsUOL' ),
+						'id' 			=> 'footer-right',
+						'description' 	=> __( 'Widgets in this area will be shown in the right column in the footer.', 'schoolsUOL' ),
+						'before_title' 	=> '<h3 class="widget-title">',
+						'after_title' 	=> '</h3>',
+						'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+						'after_widget' 	=> '</div></div>'
+					) );
+			
 	
 	
 }
@@ -175,3 +183,13 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/functions-acf.php';
 
+/**
+ * Customize Init.
+ *
+ * WP Customize related stuff.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( get_template_directory() . '/inc/customizer/wpc-init.php' ) ) {
+    require_once( get_template_directory() . '/inc/customizer/wpc-init.php' );
+}

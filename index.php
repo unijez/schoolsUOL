@@ -18,11 +18,17 @@
 
 get_header(); ?>
 
-<section class="body-section blog-body site-module">
+<section class="body-section blog-body site-module <?php theme_choice_class(); ?>">
+
+
+
+		<?php get_template_part( 'template-parts/site/hero', 'banner' ); ?>
+
 
 
 	<div class="module-inner-wrap">
-		
+		 		
+		 		
 		 			<?php if ( have_posts() ) : ?>
 		 				
 		 				<div class="posts-wrapper columns-wrap">
@@ -30,29 +36,64 @@ get_header(); ?>
 		 				
 		 				<?php while ( have_posts() ) : the_post(); ?>
 		 					
-		 					<div class="post-article-container column-spacings column column--1-of-3  column--small-1-of-2">
+		 				
 		 					
 		 				
-		 						<article id="post-article-<?php the_ID(); ?>" <?php post_class(); ?>>
+		 					
+		 					<?php if( get_theme_mod('schools_theme_choice') == 'visual-layout'  ) : ?>
 		 						
-									
-										<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+		 						
 		 							
-		 						</article>
+		 							
+		 							
+		 							<div class="post-article-container column-spacings column column--1-of-2 column--medium-1-of-1 column--small-1-of-1">
+		 										
+		 										<article id="post-article-<?php the_ID(); ?>" <?php post_class(); ?> >
+		 											
+		 											<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+		 												
+		 										</article>
+		 										
+		 										
+		 								</div> <!--post-article-container-->
+		 							
+		 						
+		 						
+		 						
+		 						
+		 					<?php else : ?>
 		 					
 		 					
-		 					</div> <!--post-article-container-->
+		 							
+		 							
+		 							<div class="post-article-container column-spacings column column--1-of-3 column--medium-1-of-2  column--small-1-of-2">
+		 									
+		 								
+		 										<article id="post-article-<?php the_ID(); ?>" <?php post_class(); ?>>
+		 										
+		 										<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+		 											
+		 										</article>
+		 									
+		 									
+		 							</div> <!--post-article-container-->
+		 					
+		 							
+		 					
+		 					
+		 					
+		 					
+		 					
+		 					<?php endif; ?>
+		 					
+		 					
+		 					
 		 					
 		 				<?php endwhile; ?>
 		 				
 		 				</div> <!--posts-wrapper-->
 		
-		 					
-		 				<?php else:  ?>
-		 					
-		 						<?php get_template_part( 'template-parts/content', 'none' ); ?>
-		 					
-		
+		 			
 					<?php endif;  wp_reset_query(); ?>
 						
 						
