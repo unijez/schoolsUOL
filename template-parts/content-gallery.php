@@ -88,14 +88,7 @@
 				
 		<?php endif; ?>
 		
-		
-		<div class="post-entry-excerpt post-spacing post-copy">
-			
-			<?php schoolsUOL_custom_excerpt_length(25) ; ?>	
-		
-		</div><!-- .post-entry-excerpt -->
-		
-		
+
 		
 
 

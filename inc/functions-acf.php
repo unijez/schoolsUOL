@@ -76,5 +76,8 @@ if( function_exists('acf_add_local_field_group') ):
 	require get_template_directory() . '/inc/acfs/posts-video-acf.php';
 	
 	
+	//Post Video Box
+	require get_template_directory() . '/inc/acfs/posts-gallery-acf.php';
+	
 
 endif;

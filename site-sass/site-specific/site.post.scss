@@ -56,14 +56,14 @@ blockquote::before, blockquote::after {
 
 .home-hero-banner{
 	margin-bottom: $desktop-side-pad / 2;
-	
+	height: 25vh;
 	
 	@include mq($until:tablet) {
 		height: 200px;
 	}
 	
 	@include mq(tablet) {
-	
+	height: 50vh;
 	}
 }
 
@@ -71,11 +71,12 @@ blockquote::before, blockquote::after {
 .post-slider *:not(.slick-arrow) {
 	height: 100%;
 	width: 100%;
+	object-fit: cover;
 }
 
 
 .home-hero-banner__transparent-block {
-  background-color: rgba($uni-blue-hex, 0.6);
+
   color: white;
   position: absolute;
   top: 0;
@@ -94,6 +95,11 @@ blockquote::before, blockquote::after {
   }
   
   
+}
+
+
+.home-hero-banner__detail {
+	  background-color: rgba($uni-blue-hex, 0.6);
 }
 
 
@@ -123,6 +129,12 @@ blockquote::before, blockquote::after {
 .home-hero-banner__detail li.date,
 .home-hero-banner__detail li.likes {
 	margin-right: 20px;
+}
+
+
+.post-entry-meta .likes-count,
+.home-hero-banner__detail .likes-count {
+	padding-right: 5px;
 }
 
 .home-hero-banner__detail li a {
@@ -380,9 +392,13 @@ blockquote::before, blockquote::after {
 
 
 
+.post-entry {
+	text-align: center;
+}
 
-
-
+.post-entry img {
+	display: inline-block;
+}
 
 
 .post-entry-excerpt.post-spacing, 

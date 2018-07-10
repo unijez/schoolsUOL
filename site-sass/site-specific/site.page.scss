@@ -22,6 +22,17 @@ p:not(:last-child) {
 
 }
 
+
+.blog-body.site-module {
+	padding: 0;
+	
+	@include mq(tablet) {
+		
+	}
+	
+}
+
+
 .site-header.site-module {
 	
 	@include mq($until:tablet) {
@@ -31,9 +42,13 @@ p:not(:last-child) {
 
 
 .columns-wrap {
-	margin-left: -$desktop-side-pad / 2;
-	margin-right: -$desktop-side-pad / 2;
+	
+	@include mq(desktop) {
+		margin-left: -$desktop-side-pad / 2;
+		margin-right: -$desktop-side-pad / 2;
+	}
 }
+
 
 	@include mq(desktop) {
 	

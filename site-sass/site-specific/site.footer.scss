@@ -95,6 +95,14 @@
 	margin-bottom: 7px;
 	list-style: none;
 	margin-top: 10px;
+	@include flexbox;
+	@include flex-direction(column);
+	
+	
+	@include mq(tablet) {
+	@include flex-direction(row);
+	}
+	
 }
 
 
@@ -112,10 +120,16 @@
 	
 }
 
+
+
 .university-links li:not(:last-child):after {
-	content: "|";
-	margin: 0 5px;
+	
+	@include mq(tablet) {
+		content: "|";
+		margin: 0 5px;
+	}
 }
+
 
 //
 // Mobile Styles
@@ -137,7 +151,7 @@
 	
 	
 	.credits-inner {
-		padding-right: 40px;
+		padding-right: 0;
 	
 	}
 	
@@ -152,7 +166,15 @@
 	
 	
 	.site-footer__hero-logo {
-		width: 80px;
+		width: 33.3333%;
+		margin: 20px 0 0;
 	}
+	
+	
+	.site-footer__bottom .module-inner-wrap {
+		@include flex-direction(column);
+		
+	}
+	
 
 }

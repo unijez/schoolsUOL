@@ -56,23 +56,22 @@
 				<?php get_template_part( 'template-parts/site/uol-logo', 'landscape' ); ?>
 			</a>
 			
-			
+			<div class="site-branding__hero-wording">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title home-page"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
 			else :
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
-			endif;
-			$schoolsUOL_description = get_bloginfo( 'description', 'display' );
-			if ( $schoolsUOL_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $schoolsUOL_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			endif;?>
+
+			
+			</div> <!--site-branding__hero-wording-->
+			
 		</div><!-- .site-branding -->
 
 	

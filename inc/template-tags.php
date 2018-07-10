@@ -258,14 +258,14 @@ if ( ! function_exists( 'schoolsUOL_permalink_button' ) ) {
  	$freedom = esc_url('secretariat.blogs.lincoln.ac.uk/information-compliance/freedom-of-information/' );
  	
 	echo('<ul class="university-links">');
- 	
-	 	echo('<li><a href="' . $sccessibility. '" rel="Accessibility">' . 'Accessibility'. '</a></li>');
-	 	echo('<li><a href="' . $contacting. '" rel="Contacting the University">' . 'Contacting the University'. '</a></li>');
-	 	echo('<li><a href="' . $legal. '" rel="Legal">' . 'Legal'. '</a></li>');
-	 	echo('<li><a href="' . $privacy. '" rel="Privacy">' . 'Privacy'. '</a></li>');
-	 	echo('<li><a href="' . $disclaimer. '" rel="Disclaimer">' . 'Disclaimer'. '</a></li>');
-	 	echo('<li><a href="' . $freedom. '" rel="Freedom of Information">' . 'Freedom of Information'. '</a></li>');
- 	
+		
+	 	echo('<li><a href="' . $sccessibility. '" title="Accessibility">' . 'Accessibility'. '</a></li>');
+	 	echo('<li><a href="' . $contacting. '" title="Contacting the University">' . 'Contacting the University'. '</a></li>');
+	 	echo('<li><a href="' . $legal. '" title="Legal">' . 'Legal'. '</a></li>');
+	 	echo('<li><a href="' . $privacy. '" title="Privacy">' . 'Privacy'. '</a></li>');
+	 	echo('<li><a href="' . $disclaimer. '" title="Disclaimer">' . 'Disclaimer'. '</a></li>');
+	 	echo('<li><a href="' . $freedom. '" title="Freedom of Information">' . 'Freedom of Information'. '</a></li>');
+		
 	echo('</ul>');
 	
  };

@@ -205,8 +205,15 @@ $toast-pulls: true !default;
   
 }
 
+
+
+
 .column-spacings {
-	padding: $desktop-side-pad / 2;
+	
+	
+	@include mq(mobileLandscape) {
+		padding: $desktop-side-pad / 2;
+	}	
 }
 
 
