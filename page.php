@@ -75,31 +75,44 @@ get_header(); ?>
 						
 					
 					<div class="post-body narrow">
-					
 						
- 						<div class="post-head">
- 						
-	 						<div class="post-entry-meta post-spacing">
-	 							<?php schoolsUOL_post_meta(); ?>
-	 						</div><!-- .entry-meta -->
- 								
- 							<?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
- 							
- 						</div>  <!--post-head-->
- 					
- 						
- 					
-					<div class="post-content">	
- 								
- 								
- 								<?php get_template_part( 'template-parts/content', 'page' ); ?>
- 								
- 						    
-					</div> <!--post-content-->
-					   
-						 
-					   
-					</div> <!--post-body-->  
+							
+								<div class="post-head">
+								
+									<div class="post-entry-meta post-spacing">
+										<?php schoolsUOL_post_meta(); ?>
+									</div><!-- .entry-meta -->
+										
+									<?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
+									
+								</div>  <!--post-head-->
+							
+								
+							
+						<div class="post-content">	
+										<?php 
+										
+										the_content();
+										
+										$args = array(
+											'before'           => '<div class="clear"></div><p class="page-links"><span class="title">' . __( 'Pages:','schoolsUOL' ) . '</span>',
+											'after'            => '</p>',
+											'link_before'      => '<span>',
+											'link_after'       => '</span>',
+											'separator'        => '',
+											'pagelink'         => '%',
+											'echo'             => 1
+										);
+									
+										wp_link_pages( $args ); 
+								    	?>
+										
+								    
+						</div> <!--post-content-->
+						   
+							  <?php comments_template( '', true ); ?>
+						   
+						</div> <!--post-body-->  
 					   
 					 
 					   

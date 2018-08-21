@@ -72,3 +72,62 @@ p:not(:last-child) {
 	@include justify-content(center);
 	
 }
+
+
+.empty-image-container {
+	@include uni-gradient;
+	@include flex-center;
+	min-height: 50vh;
+}
+
+
+
+.home-hero-banner .empty-image-container {
+	
+	@include mq(tablet) {
+		@include justify-content(flex-end);
+		padding-right: $desktop-side-pad;
+	}
+	
+	
+}
+.home-hero-banner .empty-image-container svg{
+	
+	display: none;
+	
+	@include mq(tablet) {
+		
+		display: block;
+	}
+	
+}
+
+.post-article-container .empty-image-container {
+	@include uni-gradient;
+	@include flex-center;
+	min-height: 250px;
+}
+
+
+.post-article-container .empty-image-container svg {
+	color: white;	
+		width: 35%;
+		
+	@include mq(tablet) {
+	}
+	
+	
+}
+
+
+
+.empty-image-container svg {
+	color: white;	
+		width: 35%;
+		
+	@include mq(tablet) {
+		width: 15%;
+	}
+	
+	
+}

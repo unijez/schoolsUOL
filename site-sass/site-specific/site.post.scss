@@ -56,16 +56,28 @@ blockquote::before, blockquote::after {
 
 .home-hero-banner{
 	margin-bottom: $desktop-side-pad / 2;
-	height: 25vh;
+	
+	/*height: 25vh;*/
 	
 	@include mq($until:tablet) {
-		height: 200px;
+		height: 25vh;
 	}
 	
 	@include mq(tablet) {
-	height: 50vh;
+		padding-top: $desktop-side-pad;
+	/*height: 50vh;*/
 	}
 }
+
+
+.home-hero-banner .post-meta-likes{
+	display: none;
+	
+	@include mq(tablet) {
+	@include flexbox;
+	}
+}
+
 
 .post-slider,
 .post-slider *:not(.slick-arrow) {

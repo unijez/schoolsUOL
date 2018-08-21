@@ -16,10 +16,26 @@
 <?php if( get_theme_mod('schools_theme_choice') == 'visual-layout'  ) : ?>
 
 			
+			<?php if ( has_post_thumbnail() ) : ?>
 			
+				<div class="post-entry-image">
 				
+					<?php lazy_featured_image('full'); ?>
 				
-					<?php
+							
+				</div><!-- .featured-media -->
+				
+			<?php else: ?>	
+			
+			<div class="empty-image-container">
+			
+				<?php get_template_part( 'template-parts/site/uol-logo', 'portrait' ); ?>
+			
+			
+			</div><!-- .empty-image-container -->
+					
+			<?php endif; ?>
+								<?php
 					if ( is_singular() ) :
 						the_title( '<h1 class="post-title post-spacing">', '</h1>' );
 					else :
@@ -81,6 +97,15 @@
 				
 							
 				</div><!-- .featured-media -->
+					
+			<?php else: ?>	
+			
+			<div class="empty-image-container">
+			
+				<?php get_template_part( 'template-parts/site/uol-logo', 'portrait' ); ?>
+			
+			
+			</div><!-- .empty-image-container -->
 					
 			<?php endif; ?>
 			

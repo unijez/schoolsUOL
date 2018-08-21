@@ -117,8 +117,15 @@ function lazy_featured_image( $image_size = 'thumbnail' ) {
          		    
          		);
          		
-                
-            }
+            } else {
+            	echo('<div class="empty-image-container">');
+            	get_template_part( 'template-parts/site/uol-logo', 'portrait' );
+            	echo('</div>');    
+       
+       }
+            
+            
+            
     
 }
 
@@ -353,4 +360,27 @@ if ( ! function_exists( 'schoolsUOL_comment' ) ) {
 		endswitch;
 	}
 
+}
+
+function image_size_control() {
+	global $post;
+	$image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-hero-banner-inner', false);
+	$img_width = $image_url[1];
+	$img_height = $image_url[2];
+
+	if($img_width > 1219 && $img_height > 569 && has_post_thumbnail() ) {
+				printf( 
+							'<img class="lazyload" data-srcset="%1$s" data-src="%1$s" src="%1$s"  data-width="%2$s" height="%3$s">',
+					    esc_url( $image_url[0] ),
+					    $img_width[1],
+					    $img_height[2]
+					    
+					);
+			} else {
+				echo('<div class="empty-image-container">');
+				get_template_part( 'template-parts/site/uol-logo', 'portrait' );
+				echo('</div>');
+
+	}
+	
 }

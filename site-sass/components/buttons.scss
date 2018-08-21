@@ -165,6 +165,10 @@
 
 .home-hero-banner__detail .read-more {
 	margin: $mobile-side-pad 0 0 ;
+	
+	@include mq($until:tablet) {
+		padding: 10px 15px;
+	}
 }
 
 .home-hero-banner__detail .read-more svg{

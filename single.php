@@ -58,12 +58,28 @@
  									
  							<?php endif; ?>
  							
+ 						
+ 						<?php elseif ( $post_format == 'image' ) : 
  							
+ 								
+ 							?>
+ 								
+ 								
+ 								<div class="post-entry">
+ 									
+ 										<?php image_size_control(); ?>
+ 										
+ 										
+ 									</div> <!--post-entry-->
+ 				
+ 				
  						<?php elseif ( has_post_thumbnail() ) : ?>
  							
  							<div class="post-entry">
  							
- 								<?php the_post_thumbnail( 'post-hero-banner-inner' ); ?>
+ 								<?php image_size_control(); ?>
+ 								
+ 								
  							</div> <!--post-entry-->
  								
  						<?php endif; ?>

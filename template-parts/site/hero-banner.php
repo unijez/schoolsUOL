@@ -71,7 +71,14 @@
 		 	
 	 	<?php elseif (has_post_format('image')) : ?>
 		 		
-		 	<?php lazy_featured_image('post-hero-banner'); ?>	
+		 		<?php if ( has_post_thumbnail() ) : ?>	
+		 		
+		 	
+	 			<?php else: ?>
+	 			
+		 		<?php image_size_control()?>
+		 		
+		 		<?php endif; ?>	
 		 		
 	 	<?php endif; wp_reset_query(); ?>
 	 	

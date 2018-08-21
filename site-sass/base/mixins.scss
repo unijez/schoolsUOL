@@ -114,6 +114,21 @@
 }
 
 
+/* === Flexbox Center === */
+@mixin flex-center{
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
+	
+}
+
+@mixin flex-equal-column{
+		@include flexbox;
+		@include flex-direction(column);
+	
+}
+
+
 
 /** -- Animation.--*!/*/
 @mixin keyframes($animation-name) {

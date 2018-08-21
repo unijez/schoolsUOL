@@ -51,7 +51,7 @@ if ( ! function_exists( 'schoolsUOL_post_meta' ) ) {
 								
 						<div class="date"><i class="fas fa-calendar-alt fa-2x"></i><?php echo($posted_on) ?></div>
 						
-						<ul class="flex-controlled">		
+						<ul class="flex-controlled post-meta-likes">		
 									<?php if ( function_exists( 'nice_likes' ) ) {
 										echo('<li class="likes">');
 											 nice_likes( array( 'echo' => true ) );
@@ -105,7 +105,7 @@ if ( ! function_exists( 'schoolsUOL_post_meta' ) ) {
 				
 				?>
 		
-				<ul class="flex-controlled">
+				<ul class="flex-controlled post-meta-likes">		
 				
 					<li class="date"><i class="fas fa-calendar-alt fa-2x"></i><?php echo($posted_on) ?></li>
 				
@@ -235,7 +235,64 @@ if ( ! function_exists( 'schoolsUOL_permalink_button' ) ) {
 }
 	
 	
+/**
+ * Custom Featured Image ALT Tag
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+ 
+
+
+
+function image_alt_tag_featured( $post_id = null ){
 	
+	if ( $post_id === NULL ) {
+			global $post;
+			$post_id = $post->ID;
+	}
+	
+	//vars
+	$page_title = get_the_title();
+	$site_title = get_bloginfo('name');
+	$attachment_id = get_post_thumbnail_id( $post_id );
+	
+	if ( $attachment_id ) {
+	
+		// Get the attachment alt text.
+		$alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+		
+		// Get the attachment caption.
+		$caption = get_post_field( 'post_excerpt', $attachment_id );
+		
+		// Get the attachment title.
+		$title = get_the_title( $attachment_id );
+
+		echo $site_title;
+		echo ' - ';
+		
+		if( $alt ) {
+		
+			echo $alt;
+			
+		} elseif( $title ) {
+		
+			echo $title;
+		
+		} elseif( $caption ) {
+		
+			echo $caption;
+			
+		
+			
+		} else {
+			echo $page_title;
+		}
+	
+	}
+
+}	
 	
 	
 
