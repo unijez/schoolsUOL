@@ -11,8 +11,8 @@
 
 ?>
 
-	<?php 
-	
+	<?php
+
 		$args = array(
 		'post_type' => 'post',
 		'posts_per_page' => 1,
@@ -29,70 +29,71 @@
 			        'terms' => array( 'post-format-image' )
 			    )
 			)
-			
+
 		);
-		
-		
+
+
 		$home_slider_posts = new WP_Query( $args );
-		
-		if ( $home_slider_posts->have_posts() ) : 
-		
-		
+
+		if ( $home_slider_posts->have_posts() ) :
+
+
 	?>
 	<div class="module-inner-wrap">
-	 	
-	 	<div class="home-hero-banner">
-	 	
-     <?php while ( $home_slider_posts->have_posts() ) : $home_slider_posts->the_post() ?>	
-	 	
-	 	
-	 	
-	 	<div class="home-hero-banner__transparent-block">
-	 		
-	 		
-	 		<div class="home-hero-banner__detail post-spacing column column--1-of-3">
-	 			
-	 			<?php the_title( '<h2 class="home-hero-banner__title">', '</h2>' ); ?>
-	 			
-	 			
-	 			<?php schoolsUOL_post_meta(); ?>
-	 			
-	 			<?php schoolsUOL_permalink_button(); ?>
-	 			
-	 		</div>
-	 		
-	 		
-	 	</div> <!--transparent-block-->
-	 	
-	 	
-	 	<?php if( has_post_format('gallery') ): ?>
-		 	
-		 	 <?php schoolsUOL_slickslider('post_gallery_items','post-hero-banner'); ?>
-		 	
-	 	<?php elseif (has_post_format('image')) : ?>
-		 		
-		 		<?php if ( has_post_thumbnail() ) : ?>	
-		 		
-		 	
-	 			<?php else: ?>
-	 			
-		 		<?php image_size_control()?>
-		 		
-		 		<?php endif; ?>	
-		 		
-	 	<?php endif; wp_reset_query(); ?>
-	 	
-	
-	
-	 	
-		
-		
-	 	
-		
-	<?php endwhile ?>  
-	
-		</div> <!--home-hero-banner-->
-	
 
-	</div> <!--module-inner-wrap-->	
-	<?php endif; wp_reset_query(); ?>	
+	 	<div class="home-hero-banner">
+
+     <?php while ( $home_slider_posts->have_posts() ) : $home_slider_posts->the_post() ?>
+
+
+
+	 	<div class="home-hero-banner__transparent-block">
+
+
+	 		<div class="home-hero-banner__detail post-spacing column column--1-of-3">
+
+	 			<?php the_title( '<h2 class="home-hero-banner__title">', '</h2>' ); ?>
+
+
+	 			<?php schoolsUOL_post_meta(); ?>
+
+	 			<?php schoolsUOL_permalink_button(); ?>
+
+	 		</div>
+
+
+	 	</div> <!--transparent-block-->
+
+
+	 	<?php if( has_post_format('gallery') ): ?>
+
+		 	 <?php schoolsUOL_slickslider('post_gallery_items','post-hero-banner'); ?>
+
+	 	<?php elseif (has_post_format('image')) : ?>
+
+		 		<?php if ( has_post_thumbnail() ) : ?>
+
+				<?php image_size_control()?>
+
+	 			<?php else: ?>
+
+		 		<?php image_size_control()?>
+
+		 		<?php endif; ?>
+
+	 	<?php endif; wp_reset_query(); ?>
+
+
+
+
+
+
+
+
+	<?php endwhile ?>
+
+		</div> <!--home-hero-banner-->
+
+
+	</div> <!--module-inner-wrap-->
+	<?php endif; wp_reset_query(); ?>
