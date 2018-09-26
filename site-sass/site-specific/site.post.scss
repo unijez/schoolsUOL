@@ -21,7 +21,14 @@ blockquote::before, blockquote::after {
 .blog-body,
 .post-entry-meta {
 	background-color: $off-white-footer;
-	display: inline-block;
+	//display: inline-block;
+}
+
+.format-gallery {
+	.blog-body, .post-entry-meta {
+		background-color: $off-white-footer;
+		display: inline-block;
+	}
 }
 
 .visual-layout .post-entry-meta {
