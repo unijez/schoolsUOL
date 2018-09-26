@@ -175,7 +175,6 @@ function current_paged( $var = '' ) {
  */
 
 
-if ( ! function_exists( 'schoolsUOL_slickslider' ) ) {
 
 	function schoolsUOL_slickslider( $gallery = 'post_gallery_items', $size = 'post-thumbnail' ) {
 
@@ -207,8 +206,6 @@ if ( ! function_exists( 'schoolsUOL_slickslider' ) ) {
 
 		}
 	}
-
-}
 
 
 
@@ -383,4 +380,58 @@ function image_size_control() {
 
 	}
 
+}
+
+function get_all_users() {
+  $all_users = get_users('orderby=post_count&order=DESC');
+
+  ?>
+  <ul class="authors-list">
+  <?php
+  foreach ($all_users as $author) {
+    ?>
+    <li>
+    <div class="author-role
+    <?php switch($author->roles[0]) {
+            case 'administrator':
+              echo ' administrator ';
+              break;
+
+            case 'editor':
+              echo ' editor ';
+              break;
+
+            case 'author':
+              echo ' author ';
+              break;
+
+            case 'contributor':
+              echo ' contributor ';
+              break;
+
+            case 'subscriber':
+              echo ' subscriber ';
+              break;
+
+          }
+    ?>">
+      <div class="avatar">
+        <?php echo get_avatar( $author->user_email, '128' ); ?>
+      </div>
+      <div class="text">
+      <h2 class="name">
+        <?php echo $author->display_name; ?>
+      </h2>
+      <p class="desc">
+        <?php echo get_user_meta($author->ID, 'description', true); ?>
+      </p>
+      <p class="links">
+        <a href="<?php echo get_author_posts_url( $author->ID ); ?>">View Posts</a>
+      </p>
+      </div>
+    </div>
+    </li>
+    <?php
+  }
+  ?></ul><?php
 }

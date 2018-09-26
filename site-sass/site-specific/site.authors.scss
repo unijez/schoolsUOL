@@ -1,0 +1,64 @@
+main {
+  background-color: $off-white-footer;
+}
+
+.authors-list {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+
+  * {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  li {
+    list-style: none;
+    margin-right: 40px;
+    margin-top: 40px;
+  }
+
+  li:nth-child(3n) {
+    margin-right: 0px;
+  }
+
+  .author-role {
+    max-width: 380px;
+    padding: 20px;
+    display: inline-block;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    height: 100%;
+
+    .avatar {
+      position: initial;
+      float: left;
+      width: 50px;
+    }
+
+    .text {
+      display: inline-block;
+      max-width: 280px;
+      float: left;
+      padding-left: 20px;
+      color: $post-meta;
+
+      .name {
+        display: inline-block;
+        margin-bottom: 25px;
+        color: $base-black;
+      }
+
+      a {
+        color: $base-black;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}
