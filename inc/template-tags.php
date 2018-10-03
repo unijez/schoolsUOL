@@ -52,12 +52,7 @@ if ( ! function_exists( 'schoolsUOL_post_meta' ) ) {
 						<div class="date"><i class="fas fa-calendar-alt fa-2x"></i><?php echo($posted_on) ?></div>
 						
 						<ul class="flex-controlled post-meta-likes">		
-									<?php if ( function_exists( 'nice_likes' ) ) {
-										echo('<li class="likes">');
-											 nice_likes( array( 'echo' => true ) );
-										echo('</li>');
-									
-									} ?>
+								
 								
 								
 									<?php if ( comments_open() ) {
@@ -109,12 +104,7 @@ if ( ! function_exists( 'schoolsUOL_post_meta' ) ) {
 				
 					<li class="date"><i class="fas fa-calendar-alt fa-2x"></i><?php echo($posted_on) ?></li>
 				
-					<?php if ( function_exists( 'nice_likes' ) ) {
-						echo('<li class="likes">');
-							 nice_likes( array( 'echo' => true ) );
-						echo('</li>');
-					
-					} ?>
+			
 				
 				
 					<?php if ( comments_open() ) {

@@ -96,12 +96,7 @@ get_header(); ?>
 		 			
 					<?php endif;  wp_reset_query(); ?>
 						
-						
-		 	
-		 	
-		 				</div> <!--posts-wrapper-->
-			
-	
+					
 			
 	</div> <!--module-inner-wrap-->
 	
