@@ -21,6 +21,14 @@ blockquote::before, blockquote::after {
 .blog-body,
 .post-entry-meta {
 	background-color: $off-white-footer;
+	//display: inline-block;
+}
+
+.format-gallery {
+	.blog-body, .post-entry-meta {
+		background-color: $off-white-footer;
+		display: inline-block;
+	}
 }
 
 .visual-layout .post-entry-meta {
@@ -35,7 +43,7 @@ blockquote::before, blockquote::after {
 .button-spacing {
 	margin: $desktop-side-pad / 3 $desktop-side-pad / 2 25px;
 	@include button-padding;
-	
+
 	@include mq(tablet) {
 		  top: 70px;
 		  bottom: 70px;
@@ -56,13 +64,13 @@ blockquote::before, blockquote::after {
 
 .home-hero-banner{
 	margin-bottom: $desktop-side-pad / 2;
-	
+
 	/*height: 25vh;*/
-	
+
 	@include mq($until:tablet) {
 		height: 25vh;
 	}
-	
+
 	@include mq(tablet) {
 		padding-top: $desktop-side-pad;
 	/*height: 50vh;*/
@@ -72,7 +80,7 @@ blockquote::before, blockquote::after {
 
 .home-hero-banner .post-meta-likes{
 	display: none;
-	
+
 	@include mq(tablet) {
 	@include flexbox;
 	}
@@ -96,17 +104,17 @@ blockquote::before, blockquote::after {
   margin: auto;
   width: 100%;
   z-index: $zindex-middle;
-  
+
   @include flexbox;
   @include align-items(center);
   @include justify-content(flex-start);
-  
+
   @include mq(tablet) {
 	  top: 70px;
 	  bottom: 70px;
   }
-  
-  
+
+
 }
 
 
@@ -120,12 +128,12 @@ blockquote::before, blockquote::after {
 	@include font-family(helvetica);
 	@include font-weight(black);
 	margin: 0 0 $mobile-side-pad /2;
-	
+
 	@include mq(tablet) {
 		@include font-size(35px);
 		margin: 0 0 $mobile-side-pad;
 	}
-	
+
 }
 
 .home-hero-banner__detail,
@@ -168,74 +176,74 @@ blockquote::before, blockquote::after {
 	@include flexbox;
 	@include align-items(center);
 	@include flex-direction(row);
-	
+
 }
 
 
 
 .hentry,.post {
 	@include vendor(border-radius, $small-border-radius);
- 	@include vendor(box-shadow, 0 0 5px rgba(0, 0, 0, 0.2) );	
+ 	@include vendor(box-shadow, 0 0 5px rgba(0, 0, 0, 0.2) );
  	background-color: white;
 }
 
 
 .visual-layout {
 	position: relative;
-	
+
 	&.hentry,&.post {
 		@include vendor(border-radius, 0);
 	 	background-color: white;
 	}
-	
-	
+
+
 }
 
 .home.blog .visual-layout.odd-post {
-	
+
 	&.hentry,&.post {
 	 	background-color: $uni-blue;
 	}
-	
+
 }
 
 
 .home.blog .visual-layout.even-post {
-	
+
 	&.hentry,&.post {
 	 	background-color: white;
 	}
-	
+
 }
 
 
 .home.blog .visual-layout.odd-post.format-standard,
 .home.blog .visual-layout.even-post.format-standard {
-	
+
 	.post-spacing {
 		padding-left: $desktop-side-pad;
 		padding-right: $desktop-side-pad;
 	}
-	
+
 	.post-spacing.post-copy {
 		padding-top: 5px;
 	}
-	
+
 	.button-spacing {
 		margin-left: $desktop-side-pad;
 		margin-bottom: $desktop-side-pad;
 	}
-	
+
 	.post-copy p {
 		@include font-size(15px);
 		line-height: 24px;
 	}
-	
+
 	.read-more {
 		color: $uni-blue;
 	}
-	
-	
+
+
 }
 
 
@@ -243,32 +251,32 @@ blockquote::before, blockquote::after {
 .home.blog .visual-layout.even-post.format-gallery,
 .home.blog .visual-layout.odd-post.format-image,
 .home.blog .visual-layout.even-post.format-image {
-	
+
 	@include mq($until:desktop) {
-	
+
 		.post-spacing {
 			padding-left: $desktop-side-pad;
 			padding-right: $desktop-side-pad;
 		}
-		
+
 		.post-spacing.post-copy {
 			padding-top: 5px;
 		}
-		
+
 		.button-spacing {
 			margin-left: $desktop-side-pad;
 			margin-bottom: $desktop-side-pad;
 		}
-		
+
 		.post-copy p {
 			@include font-size(15px);
 			line-height: 24px;
 		}
-		
+
 		.read-more {
 			color: $uni-blue;
 		}
-	
+
 	}
 }
 
@@ -281,10 +289,10 @@ blockquote::before, blockquote::after {
 
 
 .visual-layout .post-entry-visual-meta {
-	
+
 	color: white;
-	
-	
+
+
 	@include mq(desktop) {
 		max-width: 75%;
 		position: absolute;
@@ -294,7 +302,7 @@ blockquote::before, blockquote::after {
 	z-index: $zindex-medium-high;
 	@include background-colour($uni-blue,0.5)
 	}
-	
+
 }
 
 
@@ -343,30 +351,30 @@ blockquote::before, blockquote::after {
 .visual-layout .post-entry-meta i,
 .visual-layout .post-entry-meta .nice-likes {
 
-	
+
 	@include mq($until:desktop) {
 		@include font-size(15px);
 	}
-	
+
 }
 
 
 .home-hero-banner__detail i,
 .post-entry-meta i {
 	@include font-size(20px);
-	
+
 }
 
 .post-entry-meta a{
 	color: $post-meta;
 	text-decoration: none;
 	margin: 0;
-	
+
 	@include hocus() {
 		  text-decoration: none;
 		  color: $base-black;
 	}
-	
+
 }
 
 
@@ -390,7 +398,7 @@ blockquote::before, blockquote::after {
 	@include flexbox;
 	@include align-items(center);
 	margin-bottom: 10px;
-	
+
 }
 
 .home.blog  .visual-layout .post-entry-meta ul li.likes {
@@ -413,7 +421,7 @@ blockquote::before, blockquote::after {
 }
 
 
-.post-entry-excerpt.post-spacing, 
+.post-entry-excerpt.post-spacing,
 .post-title.post-spacing {
 	padding-top: $mobile-side-pad;
 	padding-bottom: $mobile-side-pad;
@@ -434,7 +442,7 @@ blockquote::before, blockquote::after {
 	color: $base-black;
 	@include font-weight(black);
 	@include font-size(20px);
-	
+
 	@include mq(tablet) {
 		@include font-size(25px);
 	}
@@ -444,7 +452,7 @@ blockquote::before, blockquote::after {
 .home.blog  .visual-layout .post-title {
 
 	@include font-size(20px);
-	
+
 	@include mq(desktop) {
 		@include font-size(30px);
 	}
@@ -471,11 +479,11 @@ blockquote::before, blockquote::after {
 .visual-layout.even-post.format-gallery .post-title a,
 .visual-layout.even-post.format-gallery .post-entry-excerpt p {
 	color: $uni-blue;
-	
+
 	@include mq(desktop) {
 		color: white;
 	}
-	
+
 }
 
 
@@ -485,19 +493,19 @@ blockquote::before, blockquote::after {
 .visual-layout.even-post:not(.format-image,.format-gallery) .post-title a,
 .visual-layout.even-post:not(.format-image,.format-gallery) .post-entry-excerpt p {
 	color: $uni-blue;
-	
+
 }
 
 
 .post-title a {
 	color: $base-black;
 	 text-decoration: none;
-	 
+
 	@include hocus() {
 		  text-decoration: underline;
 		  color: $base-black;
 	}
-	
+
 }
 
 
@@ -571,7 +579,7 @@ blockquote::before, blockquote::after {
 
 .page-nav__single-next {
 	@include justify-content(flex-start);
-	
+
 }
 
 
@@ -599,7 +607,7 @@ blockquote::before, blockquote::after {
 
 
 .post-entry {
-	
+
 	@include mq(tablet) {
 		padding-top: $post-spacing *2;
 	}
@@ -608,11 +616,11 @@ blockquote::before, blockquote::after {
 
 .post-body {
 	padding: $post-spacing  0 0;
-	
+
 	@include mq(tablet) {
 		padding: $post-spacing /2 0 0;
 	}
-	
+
 }
 
 
@@ -630,8 +638,8 @@ blockquote::before, blockquote::after {
 .post-body .flex-controlled {
 	@include align-items(center);
 	@include justify-content(center);
-	
-} 
+
+}
 
 .post-head:after{
 	content: "";
@@ -642,7 +650,7 @@ blockquote::before, blockquote::after {
 	margin: 40px auto;
 }
 
-.post-archive .post-title, 
+.post-archive .post-title,
 .post-body .post-title {
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -651,7 +659,7 @@ blockquote::before, blockquote::after {
 	word-wrap: break-word;
 	@include font-weight(black);
 	@include font-size(45px);
-	
+
 	color: $base-black;
 }
 
@@ -659,11 +667,11 @@ blockquote::before, blockquote::after {
 .post-head {
 		text-align: center;
 		padding: 0 $post-spacing /2;
-		
+
 	@include mq(tablet) {
 		padding: $post-spacing +20px 0;
 	}
-	
+
 }
 
 
@@ -675,14 +683,14 @@ blockquote::before, blockquote::after {
 
 
 .post-content {
-	
+
 	padding: 0 $post-spacing *2 $post-spacing *2;
-	
+
 	@include mq(tablet) {
 		padding: 0 0 $post-spacing *2;
-		
+
 	}
-	
+
 }
 
 
@@ -723,13 +731,13 @@ blockquote::before, blockquote::after {
 .post-content ul, .post-content ol {
 	margin-left: 0;
 	padding-left: $post-spacing;
-	
+
 	@include mq(tablet) {
 		margin-left: $paragraph-spacing *2;
 		padding-left: 0;
-		
+
 	}
-	
+
 }
 
 
@@ -743,9 +751,9 @@ blockquote::before, blockquote::after {
 }
 
 
-.post-content a { 
+.post-content a {
 	color: inherit;
-	border-bottom: 1px solid $base-black; 
+	border-bottom: 1px solid $base-black;
 	text-decoration: none;
 	padding-bottom: 5px;
 

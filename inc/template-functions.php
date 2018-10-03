@@ -180,24 +180,21 @@ function current_paged( $var = '' ) {
 
 		$id = get_the_ID();
 
-		$post_gallery_items_images = get_field( $gallery, $id  );
+		$post_gallery_items_images = get_field('post_gallery_items', $id);
 
 		if ( $post_gallery_items_images ) { ?>
 
-
 			<div class="post-slider">
 
-				<?php if ( $post_gallery_items_images ) : ?>
 				<ul class="slick-slider">
 
 					<?php foreach ( $post_gallery_items_images as $post_gallery_items_image ): ?>
 					<li class="slick-slide">
-							<img src="<?php echo $post_gallery_items_image['sizes'][$size]; ?>" alt="<?php echo $post_gallery_items_image['alt']; ?>" />
+							<img src="<?php echo $post_gallery_items_image['url']; ?>" alt="<?php echo $post_gallery_items_image['alt']; ?>" />
 					</li>
 					<?php endforeach; ?>
 
 				</ul>
-				<?php endif; ?>
 
 
 			</div><!-- .flexslider -->

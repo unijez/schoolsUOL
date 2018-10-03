@@ -34,7 +34,7 @@
 
  							<div class="post-entry">
 
- 								<?php var_dump(schoolsUOL_slickslider('post-hero-banner-inner', 'post_gallery_items')); ?>
+ 								<?php schoolsUOL_slickslider('post-hero-banner-inner', 'post_gallery_items'); ?>
 
  							</div> <!--post-entry-->
 
