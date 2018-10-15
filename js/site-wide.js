@@ -111,22 +111,28 @@ $('.slick-slider').each(function (idx, item) {
 		     {
 		       breakpoint: 980,
 		       settings: {
-		         slidesToShow: 1,
-		         slidesToScroll: 1
+		        slidesToShow: 1,
+		        slidesToScroll: 1,
+		        autoplay: true,
+		        arrows: true
 		       }
 		     },
 		     {
 		       breakpoint: 740,
 		       settings: {
 		         slidesToShow: 1,
-		         slidesToScroll: 1
+		         slidesToScroll: 1,
+		         autoplay: true,
+		         arrows: true
 		       }
 		     },
 		     {
 		       breakpoint: 320,
 		       settings: {
 		         slidesToShow: 1,
-		         slidesToScroll: 1
+		         slidesToScroll: 1,
+				 autoplay: true,
+				 arrows: true
 		       }
 		     }
 		     // You can unslick at a given breakpoint now by adding:

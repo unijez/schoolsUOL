@@ -1,0 +1,53 @@
+{
+    "key": "group_5bc4953bf0615",
+    "title": "Featured Page or Post?",
+    "fields": [
+        {
+            "key": "field_5bc495d4b812a",
+            "label": "Featured?",
+            "name": "featured_post_page",
+            "type": "button_group",
+            "instructions": "Does this post or page appear within the home page featured slider?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "not-featured": "Not Featured",
+                "featured": "Featured"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1539610148
+}

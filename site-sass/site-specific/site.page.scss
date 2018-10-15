@@ -87,6 +87,12 @@ p:not(:last-child) {
 	@include mq(tablet) {
 		@include justify-content(flex-end);
 		padding-right: $desktop-side-pad;
+		min-height: 370px;
+	}
+	
+	@include mq(tablet) {
+
+		min-height: 570px;
 	}
 	
 	

@@ -190,7 +190,7 @@ function current_paged( $var = '' ) {
 
 					<?php foreach ( $post_gallery_items_images as $post_gallery_items_image ): ?>
 					<li class="slick-slide">
-							<img src="<?php echo $post_gallery_items_image['url']; ?>" alt="<?php echo $post_gallery_items_image['alt']; ?>" />
+							<img src="<?php echo $post_gallery_items_image['sizes'][$size]; ?>" alt="<?php echo $post_gallery_items_image['alt']; ?>" />
 					</li>
 					<?php endforeach; ?>
 

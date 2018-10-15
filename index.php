@@ -35,9 +35,7 @@ get_header(); ?>
 		 				
 		 				
 		 				<?php while ( have_posts() ) : the_post(); ?>
-		 					
 		 				
-		 					
 		 				
 		 					
 		 					<?php if( get_theme_mod('schools_theme_choice') == 'visual-layout'  ) : ?>
