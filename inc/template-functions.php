@@ -236,6 +236,19 @@ if ( ! function_exists( 'schoolsUOL_custom_excerpt_length' ) ) {
 }
 
 
+if ( ! function_exists( 'custom_biography' ) ) {
+	function custom_biography($biography, $limit) {
+	  $b_bio = explode(' ', $biography, $limit);
+	  if (count($b_bio)>=$limit) {
+	    array_pop($b_bio);
+	    $b_bio = implode(" ",$b_bio).'...';
+	  } else {
+	    $b_bio = implode(" ",$b_bio);
+	  }
+	  $b_bio = preg_replace('`[[^]]*]`','',$b_bio);
+	  echo $b_bio;
+	}
+}
 
 /**
  * Remove Comment Form Intro
@@ -361,6 +374,7 @@ function image_size_control() {
 	$image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-hero-banner-inner', false);
 	$img_width = $image_url[1];
 	$img_height = $image_url[2];
+
 
 	if(($img_width > 1200) && ($img_height > 500) && has_post_thumbnail() ) {
 				printf(

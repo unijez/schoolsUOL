@@ -105,7 +105,7 @@ html {
   /* [1] */
   overflow-y: scroll;
   /* [2] */
-  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   min-height: 100%;
   /* [3] */ }
 
@@ -11940,6 +11940,10 @@ blockquote::before, blockquote::after {
   margin-bottom: 35px;
   margin-top: 65px; }
 
+.comments-title,
+.comment-reply-title {
+  margin-top: 0; }
+
 .post-content h1,
 .post-content h2 {
   font-size: 33px;
@@ -12346,46 +12350,118 @@ p:not(:last-child) {
     -ms-flex-direction: column;
     flex-direction: column; } }
 
-main {
-  background-color: #f7f7f7; }
-
-.authors-list {
-  display: inline-flex;
-  flex-direction: row;
+.author-columns-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1200px; }
-  .authors-list * {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-  .authors-list li {
-    list-style: none;
-    margin-right: 40px;
-    margin-top: 40px; }
-  .authors-list li:nth-child(3n) {
-    margin-right: 0px; }
-  .authors-list .author-role {
-    max-width: 380px;
-    padding: 20px;
-    display: inline-block;
-    background-color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    height: 100%; }
-    .authors-list .author-role .avatar {
-      position: initial;
-      float: left;
-      width: 50px; }
-    .authors-list .author-role .text {
-      display: inline-block;
-      max-width: 280px;
-      float: left;
-      padding-left: 20px;
-      color: #aaaaaa; }
-      .authors-list .author-role .text .name {
-        display: inline-block;
-        margin-bottom: 25px;
-        color: #404040; }
-      .authors-list .author-role .text a {
-        color: #404040;
-        text-decoration: none; }
-      .authors-list .author-role .text a:hover {
-        text-decoration: underline; }
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  margin-left: -20px;
+  margin-right: -20px; }
+
+.author-column {
+  width: 100%;
+  padding: 0 20px 40px; }
+  @media (min-width: 46.25em) {
+    .author-column {
+      -webkit-flex-basis: auto;
+      -moz-flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+      width: 50%; } }
+  @media (min-width: 61.25em) {
+    .author-column {
+      width: 33.3333333333%; } }
+
+.author-bio-card {
+  background-color: white;
+  text-align: center;
+  background-color: #F7F7F7;
+  height: 100%;
+  padding: 0 40px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.author-bio-image {
+  display: inline-block;
+  top: -10px;
+  position: relative;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%; }
+
+.author-bio-image .avatar {
+  width: auto;
+  height: auto;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
+
+.author-bio-detail {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -moz-box-flex: 1;
+  -moz-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  width: 100%; }
+
+.author-bio-title {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 10px; }
+
+.author-bio-contact a {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  color: #747678;
+  text-decoration: none; }
+
+.author-bio-detail-copy {
+  color: #00325f; }
+  @media (min-width: 46.25em) {
+    .author-bio-detail-copy {
+      padding: 0 40px; } }
+
+.author-bio-articles {
+  display: inline-block;
+  background-color: #F0F0F0;
+  text-align: center;
+  text-decoration: none;
+  padding: 13.3333333333px 20px;
+  text-transform: uppercase;
+  margin-top: 40px;
+  font-weight: bold;
+  color: #747678; }
+  .author-bio-articles:hover, .author-bio-articles:focus {
+    background-color: #747678;
+    color: white; }

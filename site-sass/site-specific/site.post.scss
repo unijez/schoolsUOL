@@ -781,6 +781,11 @@ blockquote::before, blockquote::after {
 	margin-top: 65px;
 }
 
+.comments-title,
+.comment-reply-title  {
+	margin-top: 0;
+}
+
 
 .post-content h1,
 .post-content h2 {

@@ -80,7 +80,7 @@ get_header(); ?>
 								<div class="post-head">
 								
 									<div class="post-entry-meta post-spacing">
-										<?php schoolsUOL_post_meta(); ?>
+										<?php //schoolsUOL_post_meta(); ?>
 									</div><!-- .entry-meta -->
 										
 									<?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
