@@ -57,7 +57,7 @@
 				<?php get_template_part( 'template-parts/site/uol-logo', 'landscape' ); ?>
 			</a>
 			
-			<div class="site-branding__hero-wording">
+			<div class="site-branding__hero-wording flex-controlled">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :

@@ -4431,7 +4431,8 @@ readers do not read off random characters that represent icons */
 
 @media (min-width: 46.25em) {
   .main-navigation {
-    float: right;
+    float: left;
+    clear: both;
     display: block; }
   .primary-menu li {
     float: left;
@@ -4524,6 +4525,11 @@ readers do not read off random characters that represent icons */
     -ms-border-radius: 0 0 3px 3px;
     -o-border-radius: 0 0 3px 3px;
     border-radius: 0 0 3px 3px; } }
+
+@media (min-width: 61.25em) {
+  .main-navigation {
+    float: right;
+    clear: right; } }
 
 /* ==========================================================================
    #DEFAULT FORM LAYOUTS
@@ -12202,17 +12208,16 @@ p:not(:last-child) {
     text-decoration: none; }
 
 .site-branding__hero-wording {
-  justify-content: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  -moz-justify-content: flex-start;
-  justify-content: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
   -webkit-flex-direction: column;

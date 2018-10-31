@@ -92,7 +92,8 @@
 	
 
 	.main-navigation {
-		float: right;
+		float: left;
+		clear: both;
 		display: block;
 	}
 	
@@ -210,4 +211,12 @@
 
 
 
+}
+
+@include mq(desktop) {
+	
+	.main-navigation {
+		float: right;
+		clear: right;
+	}
 }
