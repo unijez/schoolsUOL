@@ -71,11 +71,11 @@ if ( ! function_exists( 'schoolsUOL_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-		
+
 		// Post formats
 		add_theme_support( 'post-formats', array( 'video', 'gallery', 'image' ) );
-		
-		
+
+
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -90,6 +90,21 @@ if ( ! function_exists( 'schoolsUOL_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'schoolsUOL_setup' );
+
+/*
+** REMOVE CATEGORY: AND TAG: AND AUTHOR: FROM SEARCHES AND THE DIFFERENT ARCHIVE PAGES
+*/
+function prefix_archive_title( $title ) {
+	 if ( is_category() ) {
+		 $title = single_cat_title( '', false );
+	 } elseif ( is_tag() ) {
+		 $title = single_tag_title( '', false );
+	 } elseif ( is_author() ) {
+		 $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+	 }
+	 return $title;
+}
+add_filter( 'get_the_archive_title', 'prefix_archive_title' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -113,9 +128,9 @@ add_action( 'after_setup_theme', 'schoolsUOL_content_width', 0 );
  */
 function schoolsUOL_widgets_init() {
 
-			
-	
-	
+
+
+
 			register_sidebar( array(
 				'name' 			=> __( 'Footer Left', 'schoolsUOL' ),
 				'id' 			=> 'footer-left',
@@ -125,7 +140,7 @@ function schoolsUOL_widgets_init() {
 				'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
 				'after_widget' 	=> '</div></div>'
 			) );
-	
+
 			register_sidebar( array(
 				'name' 			=> __( 'Footer Middle', 'schoolsUOL' ),
 				'id' 			=> 'footer-middle',
@@ -135,8 +150,8 @@ function schoolsUOL_widgets_init() {
 				'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
 				'after_widget' 	=> '</div></div>'
 			) );
-			
-			
+
+
 			register_sidebar( array(
 						'name' 			=> __( 'Footer Right', 'schoolsUOL' ),
 						'id' 			=> 'footer-right',
@@ -146,9 +161,9 @@ function schoolsUOL_widgets_init() {
 						'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
 						'after_widget' 	=> '</div></div>'
 					) );
-			
-	
-	
+
+
+
 }
 add_action( 'widgets_init', 'schoolsUOL_widgets_init' );
 
@@ -198,15 +213,15 @@ if ( file_exists( get_template_directory() . '/inc/customizer/wpc-init.php' ) ) 
 /**
  * Load Theme Update file.
  */
-if ( file_exists( get_template_directory() . '/inc/plugin-update-checker/plugin-update-checker.php' ) ) { 	
+if ( file_exists( get_template_directory() . '/inc/plugin-update-checker/plugin-update-checker.php' ) ) {
 
 	require get_template_directory() .  '/inc/plugin-update-checker/plugin-update-checker.php';
-	
+
 	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 		'https://wordpress.uat.lincoln.ac.uk//wp-update-server/?action=get_metadata&slug=schoolsUOL',
 		__FILE__, //Full path to the main plugin file or functions.php.
 		'schoolsUOL'
 	);
-	
-	
+
+
 }
