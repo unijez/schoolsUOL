@@ -14,7 +14,7 @@
 	@include font-family(helvetica);
 	@include font-weight(normal);
 	@include font-size(12px);
-	
+
 	@include mq(tablet) {
 		 @include font-size(15px);
 	}
@@ -41,7 +41,7 @@
 	/*@extend .level-right;*/
 	@include align-items(flex-start);
 	list-style: none;
-	
+
 }
 
 
@@ -69,7 +69,7 @@
 	/*margin-top: $mobile-side-pad;*/
 	/*@include flexbox;*/
 	@include align-items(flex-start);
-	
+
 	@include mq(tablet) {
 		 margin-top: 0;
 	}
@@ -84,7 +84,7 @@
 }
 
 .credits-inner p:first-child {
-	
+
 	@include mq(tablet) {
 		line-height: 25px;
 	}
@@ -97,12 +97,12 @@
 	margin-top: 10px;
 	@include flexbox;
 	@include flex-direction(column);
-	
-	
+
+
 	@include mq(tablet) {
 	@include flex-direction(row);
 	}
-	
+
 }
 
 
@@ -113,17 +113,17 @@
 .university-links li a{
 	color: $off-grey-footer-tint;
 	text-decoration: none;
-	
+
 	@include hocus() {
 		  text-decoration: underline;
 	}
-	
+
 }
 
 
 
 .university-links li:not(:last-child):after {
-	
+
 	@include mq(tablet) {
 		content: "|";
 		margin: 0 5px;
@@ -136,45 +136,51 @@
 //
 
 
+.footer-top.site-module,
+.page-nav.site-module {
+	padding-left: $post-spacing *2 ;
+	padding-right: $post-spacing *2 ;
 
+	@include mq($until:desktop) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.page-nav.site-module .has-text-centered {
+	@include mq($until:tablet) {
+		display: none;
+	}
+}
 
 
 @include mq($until:tablet) {
-	
-	
-	.footer-top.site-module,
-	.page-nav.site-module {
-		padding-left: $post-spacing *2 ;
-		padding-right: $post-spacing *2 ;
-	}
-	
-	
-	
+
 	.credits-inner {
 		padding-right: 0;
-	
+
 	}
-	
+
 	.credits-inner p:first-child {
 		margin-bottom: 8px;
 	}
-	
+
 	.site-footer__bottom {
-		
-		
+
+
 	}
-	
-	
+
+
 	.site-footer__hero-logo {
 		width: 33.3333%;
 		margin: 20px 0 0;
 	}
-	
-	
+
+
 	.site-footer__bottom .module-inner-wrap {
 		@include flex-direction(column);
-		
+
 	}
-	
+
 
 }
