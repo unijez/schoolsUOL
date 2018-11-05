@@ -184,8 +184,6 @@ blockquote::before, blockquote::after {
 
 
 .hentry,.post {
-	@include vendor(border-radius, $small-border-radius);
- 	@include vendor(box-shadow, 0 0 5px rgba(0, 0, 0, 0.2) );
  	background-color: white;
 }
 
@@ -754,15 +752,18 @@ blockquote::before, blockquote::after {
 
 
 .post-content a {
-	color: inherit;
-	border-bottom: 1px solid $base-black;
+	color: $link-color;
 	text-decoration: none;
 	padding-bottom: 5px;
 
 	@include hocus() {
-		border-bottom-color: #928452;
+			border-bottom: 1px solid $link-color;
 	}
 
+}
+
+.post-content img {
+	padding: 30px;
 }
 
 
