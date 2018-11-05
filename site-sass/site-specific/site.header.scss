@@ -32,7 +32,13 @@
 
 
 
+.site-header > .module-inner-wrap {
+	display: flex;
 
+	@include mq($until:desktop) {
+		flex-wrap: wrap;
+	}
+}
 
 
 //
@@ -41,6 +47,11 @@
 
 
 
+.site-branding {
+	@include mq($until:tablet) {
+		width: 100%;
+	}
+}
 
 
 .site-branding {
@@ -59,13 +70,17 @@
      @include font-weight(black);
      @include font-size(16px);
      text-transform: uppercase;
-     max-width: 250px;
+     max-width: 140px;
 
 
 	 @include mq(tablet) {
 		  @include font-size(18px);
 	 }
 
+	 	@include mq($until:tablet) {
+			width: 100%;
+			max-width: 100%;
+		}
   }
 
 
@@ -102,7 +117,8 @@
 .site-branding__hero-logo {
 	color: $uni-blue;
 	max-width: 300px;
-	display: block;
+	display: inline-flex;
+	align-items: center;
 
 	@include mq(tablet) {
 
@@ -112,6 +128,12 @@
 
 	@include hocus() {
 		color: $uni-grey;
+	}
+
+	@include mq($until:tablet) {
+		svg {
+			width: 100%;
+		}
 	}
 
 }
