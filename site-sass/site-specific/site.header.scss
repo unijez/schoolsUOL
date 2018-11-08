@@ -48,6 +48,7 @@
 
 
 .site-branding {
+	flex-grow: 1;
 	@include mq($until:tablet) {
 		width: 100%;
 	}
@@ -70,7 +71,7 @@
      @include font-weight(black);
      @include font-size(16px);
      text-transform: uppercase;
-     max-width: 140px;
+     max-width: 200px;
 
 
 	 @include mq(tablet) {
