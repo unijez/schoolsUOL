@@ -82,17 +82,51 @@
 
 		 				<?php while ( have_posts() ) : the_post(); ?>
 
-		 					<div class="post-article-container column-spacings column column--1-of-3  column--small-1-of-2">
-
-
-		 						<article id="post-article-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-									<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-
-		 						</article>
-
-
-		 					</div> <!--post-article-container-->
+		 					<?php if( get_theme_mod('schools_theme_choice') == 'visual-layout'  ) : ?>
+		 							
+		 							
+		 								
+		 								
+		 								
+		 								<div class="post-article-container column-spacings column column--1-of-2 column--medium-1-of-1 column--small-1-of-1">
+		 											
+		 											<article id="post-article-<?php the_ID(); ?>" <?php post_class(); ?> >
+		 												
+		 												<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+		 													
+		 											</article>
+		 											
+		 											
+		 									</div> <!--post-article-container-->
+		 								
+		 							
+		 							
+		 							
+		 							
+		 						<?php else : ?>
+		 						
+		 						
+		 								
+		 								
+		 								<div class="post-article-container column-spacings column column--1-of-3 column--medium-1-of-2  column--small-1-of-2">
+		 										
+		 									
+		 											<article id="post-article-<?php the_ID(); ?>" <?php post_class(); ?>>
+		 											
+		 											<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+		 												
+		 											</article>
+		 										
+		 										
+		 								</div> <!--post-article-container-->
+		 						
+		 								
+		 						
+		 						
+		 						
+		 						
+		 						
+		 						<?php endif; ?>
 
 		 				<?php endwhile; ?>
 

@@ -69,7 +69,7 @@ blockquote::before, blockquote::after {
 	/*height: 25vh;*/
 
 	@include mq($until:tablet) {
-		height: 25vh;
+		height: 340px;
 	}
 
 	@include mq(tablet) {
@@ -77,6 +77,20 @@ blockquote::before, blockquote::after {
 	/*height: 50vh;*/
 	}
 }
+
+.home-hero-banner .empty-image-container,
+.home-hero-banner .slick-slide img{
+
+	/*height: 25vh;*/
+
+	@include mq($until:tablet) {
+		height: 340px;
+		
+		object-fit: cover;
+	}
+
+}
+
 
 
 .home-hero-banner .post-meta-likes{
@@ -201,6 +215,7 @@ blockquote::before, blockquote::after {
 
 }
 
+.archive .visual-layout.odd-post,
 .home.blog .visual-layout.odd-post {
 
 	&.hentry,&.post {
@@ -209,7 +224,7 @@ blockquote::before, blockquote::after {
 
 }
 
-
+.archive .visual-layout.even-post,
 .home.blog .visual-layout.even-post {
 
 	&.hentry,&.post {
@@ -218,7 +233,8 @@ blockquote::before, blockquote::after {
 
 }
 
-
+.archive .visual-layout.odd-post.format-standard,
+.archive .visual-layout.even-post.format-standard,
 .home.blog .visual-layout.odd-post.format-standard,
 .home.blog .visual-layout.even-post.format-standard {
 
@@ -248,7 +264,10 @@ blockquote::before, blockquote::after {
 
 }
 
-
+.archive .visual-layout.odd-post.format-gallery,
+.archive .visual-layout.even-post.format-gallery,
+.archive .visual-layout.odd-post.format-image,
+.archive .visual-layout.even-post.format-image,
 .home.blog .visual-layout.odd-post.format-gallery,
 .home.blog .visual-layout.even-post.format-gallery,
 .home.blog .visual-layout.odd-post.format-image,
@@ -710,8 +729,8 @@ blockquote::before, blockquote::after {
 .comment-notes,
 .post-content {
 	color: $off-base-black;
-	@include font-family(serif);
-	@include font-size(22px);
+	@include font-family(verdana);
+	@include font-size(17px);
 }
 
 .post-content p,
@@ -723,7 +742,7 @@ blockquote::before, blockquote::after {
 .post-content dl,
 .post-content .wp-caption,
 .post-content pre {
-	line-height: 33px;
+	line-height: 31px;
 	margin-bottom: $paragraph-spacing;
 }
 

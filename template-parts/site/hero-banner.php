@@ -57,8 +57,7 @@
 									
 										 		<div class="home-hero-banner__detail post-spacing column column--1-of-3">
 									
-										 			<?php the_title( '<h2 class="home-hero-banner__title">', '</h2>' ); ?>
-									
+										 			<h2 class="home-hero-banner__title"><?php echo wp_trim_words( get_the_title(), 5 ); ?></h2>
 									
 										 			<?php schoolsUOL_post_meta(); ?>
 									

@@ -130,11 +130,6 @@
 		color: $uni-grey;
 	}
 
-	@include mq($until:tablet) {
-		svg {
-			width: 100%;
-		}
-	}
 
 }
 
